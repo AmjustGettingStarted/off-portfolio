@@ -6,19 +6,14 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 const projects = [
   {
-    title: "Winglet",
-    description: "A full-stack social media platform inspired by X (formerly Twitter), built with modern web technology. [Under development]",
-    imgUrl: "/Winglet.png",
-    link: "https://github.com/Tushar-Aich/Winglet",
-    tags: ["React", "Node.js", "Tailwind CSS", "Express.js", "Mongo DB", "Shadcn UI", "Typescript"],
+    title: "Car Website [UI]",
+    description:
+      "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
+    imgUrl: "/km.jpg",
+    link: "https://k-mold.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
-  {
-    title: "Portfolio Website",
-    description: "My portfolio website showcases my experience in MERN stack and is built with React, Tailwind CSS, Radix UI, and Framer Motion",
-    imgUrl: "/Portfolio.png",
-    link: "https://portfolio-2-phi-eight.vercel.app",
-    tags: ["React", "Tailwind CSS", "Radix UI", "Frmer Motion", "Typescript"],
-  },
+ 
 ];
 
 const Projects = () => {
