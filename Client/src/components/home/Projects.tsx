@@ -21,7 +21,22 @@ const projects = [
     link: "https://financelandingpage-responsive.vercel.app/",
     tags: ["Vite", "React", "Tailwind CSS", "Shadcn UI"],
   },
- 
+  {
+    title: "Landing Page",
+    description:
+      "A landing page built using React, Tailwind CSS, Radix UI, Framer Motion, TypeScript, Vite, and ESLint for a sleek and interactive front-end experience.",
+    imgUrl: "/resort.jpeg",
+    link: "https://travel-x-unravel.vercel.app/",
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "Framer Motion",
+      "TypeScript",
+      "Vite",
+      "ESLint",
+    ],
+  },
 ];
 
 const Projects = () => {
