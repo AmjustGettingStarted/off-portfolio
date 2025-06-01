@@ -37,6 +37,23 @@ const projects = [
       "ESLint",
     ],
   },
+  {
+    title: "Stack Overflow [CLONE]",
+    description:
+      "A fully functional Q&A platform built using MongoDB, Express.js, React, and Node.js, designed to replicate the core experience of Stack Overflow. Users can post questions, answer queries, upvote/downvote responses, and engage in meaningful discussions.",
+    imgUrl: "/stackOverflow.jpg",
+    link: "https://stackoverflow-clone-fqn3.onrender.com/",
+    tags: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Bootstrap",
+      "GitHub",
+      "REST API",
+      "JWT Authentication",
+    ],
+  },
 ];
 
 const Projects = () => {
