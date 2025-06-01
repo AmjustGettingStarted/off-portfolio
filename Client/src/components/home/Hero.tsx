@@ -5,7 +5,10 @@ import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative flex min-h-screen items-center py-16">
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center py-16"
+    >
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <motion.div
           initial={{ opacity: 0 }}
@@ -41,9 +44,9 @@ const Hero = () => {
               variants={fadeIn("up", 0.2)}
               className="mb-6 text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl"
             >
-              Creating Beautiful Digital
+              Transforming Ideas Into
               <span className="relative ml-2 inline-block">
-                Experiences
+                Reality
                 <motion.span
                   initial={{ width: "0%" }}
                   animate={{ width: "100%" }}
@@ -57,10 +60,14 @@ const Hero = () => {
               variants={fadeIn("up", 0.3)}
               className="mb-8 text-lg text-muted-foreground md:text-xl"
             >
-              I'm a creative developer crafting seamless and elegant digital solutions. Let's build something amazing together.
+              Bringing ideas to life through seamless, elegant digital
+              solutions. Let's create something extraordinary together!
             </motion.p>
 
-            <motion.div variants={fadeIn("up", 0.4)} className="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0">
+            <motion.div
+              variants={fadeIn("up", 0.4)}
+              className="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0"
+            >
               <motion.a
                 href="#projects"
                 className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -87,7 +94,7 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="overflow-hidden rounded-2xl border-4 border-primary/20 shadow-xl"
+              className="overflow-hidden rounded-2xl border-4 border-primary/20 shadow-xl "
             >
               <motion.img
                 initial={{ scale: 1.2, opacity: 0 }}
@@ -95,7 +102,7 @@ const Hero = () => {
                 transition={{ duration: 1, delay: 0.2 }}
                 src="/Avatar.jpg"
                 alt="Profile"
-                className="h-64 w-64 object-cover object-top"
+                className="h-64 w-64 object-cover object-top "
               />
             </motion.div>
             <motion.div
@@ -104,7 +111,9 @@ const Hero = () => {
             >
               <h3 className="mb-2 text-lg font-medium">About Me</h3>
               <p className="text-sm text-muted-foreground">
-                I'm Tushar Aich, a passionate MERN stack developer from Assam, India. I specialize in crafting dynamic, user-centric web applications using MongoDB, Express.js, React, Node.js.
+                I'm Harshith MV, a web developer passionate about
+                building intuitive and engaging digital experiences. Excited to
+                learn, grow, and contribute to impactful projects
               </p>
             </motion.div>
           </motion.div>
@@ -115,7 +124,13 @@ const Hero = () => {
         href="#projects"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 1, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
+        transition={{
+          delay: 1.2,
+          duration: 1,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
         className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center"
       >
         <span className="mb-2 text-sm text-muted-foreground">Scroll Down</span>
