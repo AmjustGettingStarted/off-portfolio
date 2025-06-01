@@ -13,6 +13,14 @@ const projects = [
     link: "https://k-mold.vercel.app/",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
   },
+  {
+    title: "Landing Page",
+    description:
+      "A landing page built with Vite to deliver a sleek, responsive, and visually engaging front-end experience.",
+    imgUrl: "/Finance.jpeg",
+    link: "https://financelandingpage-responsive.vercel.app/",
+    tags: ["Vite", "React", "Tailwind CSS", "Shadcn UI"],
+  },
  
 ];
 
