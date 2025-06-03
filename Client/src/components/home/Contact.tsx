@@ -25,6 +25,10 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // Bug Check
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  console.log("Backend URL:", BACKEND_URL); // Debugging
+
   const Submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
