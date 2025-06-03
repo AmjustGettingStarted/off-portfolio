@@ -1,52 +1,70 @@
-
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { SectionHeading } from "@/components/ui/AnimatedText";
-import { Code, Layout, Zap, Database, Server } from "lucide-react";
+import {
+  Code,
+  Layout,
+  Zap,
+  Database,
+  Server,
+  Computer,
+  ChartBarStacked,
+} from "lucide-react";
 
 const skills = [
-  { name: "NextJS", level: 75, color: "bg-[#e34f26]" },
-  { name: "TypeScript", level: 60, color: "bg-[#3178c6]" },
-  { name: "TailwindCSS", level: 75, color: "bg-[#e34f26]" },
-  { name: "React", level: 70, color: "bg-[#61dafb]" },
-  { name: "Java", level: 75, color: "bg-[#e34f26]" },
-  { name: "MySQL", level: 85, color: "bg-[#00758F]" },
-  { name: "Spring", level: 60, color: "bg-[#e34f26]" },
-  { name: "HTML & CSS", level: 75, color: "bg-[#e34f26]" },
-  { name: "JavaScript", level: 70, color: "bg-[#f7df1e]" },
+  { name: "NextJS", level: 75, color: "bg-[#0070F3]" }, // Official Next.js blue
+  { name: "TypeScript", level: 60, color: "bg-[#3178C6]" }, // TypeScript blue
+  { name: "TailwindCSS", level: 75, color: "bg-[#06B6D4]" }, // Tailwind cyan
+  { name: "React", level: 70, color: "bg-[#61DAFB]" }, // React light blue
+  { name: "Java", level: 75, color: "bg-[#F89820]" }, // Java orange
+  { name: "MySQL", level: 85, color: "bg-[#DD8A00]" }, // MySQL warm yellow-orange
+  { name: "Spring", level: 60, color: "bg-[#6DB33F]" }, // Spring green
+  { name: "HTML & CSS", level: 75, color: "bg-[#E44D26]" }, // HTML orange-red
+  { name: "JavaScript", level: 70, color: "bg-[#F7DF1E]" }, // JavaScript yellow
+  { name: "Mongo DB", level: 50, color: "bg-[#4DB33D]" }, // MongoDB green
+  { name: "Git/GitHub", level: 75, color: "bg-[#F05032]" }, // Git red-orange
   // { name: "Express.js", level: 80, color: "bg-[#353535]" },
   // { name: "Node.js", level: 77, color: "bg-[#68a063]" },
   // { name: "Prisma ORM", level: 80, color: "bg-[#1B9AAA]" },
   // { name: "Mongoose ORM", level: 79, color: "bg-[#4A2F27]" },
-  { name: "Mongo DB", level: 50, color: "bg-[#116149]" },
-  { name: "Git/GitHub", level: 75, color: "bg-[#181717]" },
 ];
 
 const services = [
   {
-    icon: <Code className="h-8 w-8" />,
-    title: "Web Development",
-    description: "Building responsive and performant web applications with modern technologies.",
-  },
-  {
     icon: <Layout className="h-8 w-8" />,
-    title: "Frontend Development",
-    description: "Creating engaging user interfaces with attention to detail and performance.",
+    title: "Frontend Engineering",
+    description:
+      "Crafting high-performance, scalable user interfaces with Next.js, React, and Tailwind CSS.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    title: "Performance Optimization",
-    description: "Improving app performance and optimizing loading times for better user experience.",
-  },
-  {
-    icon: <Database className="h-8 w-8" />,
-    title: "Database Design",
-    description: "Designing efficient database schemas and implementing robust data storage solutions.",
+    title: "Web Performance Optimization",
+    description:
+      "Enhancing UX by improving load speeds, accessibility, and responsiveness.",
   },
   {
     icon: <Server className="h-8 w-8" />,
-    title: "Backend Development",
-    description: "Building scalable server-side applications and RESTful APIs.",
+    title: "Exploring Java Full Stack",
+    description:
+      "Diving into Spring Boot, MySQL, and backend technologies to expand my skillset.",
+  },
+  {
+    icon: <Code className="h-8 w-8" />,
+    title: "Component-Driven Development",
+    description:
+      "Building reusable and maintainable UI components with modern frameworks.",
+  },
+  {
+    icon: <Computer className="h-8 w-8" />,
+    title: "UI/UX Enhancements",
+    description:
+      "Refining designs and improving user interactions in front-end projects using Radix UI, Shadcn UI, and Framer Motion.",
+  },
+  {
+    icon: <ChartBarStacked className="h-8 w-8" />,
+    title: "Full-Stack Project Development",
+    description:
+      "Working on real-world projects like a Stack Overflow clone, applying full-stack principles using MongoDB, Express.js, React, and Node.js.",
   },
 ];
 
@@ -69,10 +87,16 @@ const About = () => {
           >
             <h3 className="mb-4 text-2xl font-medium">Get to know me</h3>
             <p className="mb-4 text-muted-foreground">
-              I'm a passionate developer focused on creating elegant and efficient digital solutions. With expertise in modern web technologies, I combine technical skills with creative thinking to build exceptional user experiences.
+              I'm a passionate developer focused on creating elegant and
+              efficient digital solutions. With expertise in modern web
+              technologies, I combine technical skills with creative thinking to
+              build exceptional user experiences.
             </p>
             <p className="mb-6 text-muted-foreground">
-              My approach emphasizes clean code, responsive design, and intuitive user interfaces. I'm constantly exploring new technologies and methodologies to deliver cutting-edge solutions that exceed expectations.
+              My approach emphasizes clean code, responsive design, and
+              intuitive user interfaces. I'm constantly exploring new
+              technologies and methodologies to deliver cutting-edge solutions
+              that exceed expectations.
             </p>
 
             <div className="mt-6">
@@ -109,7 +133,7 @@ const About = () => {
             variants={fadeIn("left", 0.2)}
             className="flex flex-col justify-center"
           >
-            <h3 className="mb-6 text-2xl font-medium">Services I offer</h3>
+            <h3 className="mb-6 text-2xl font-medium">What I'm Learning</h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {services.map((service, index) => (
                 <motion.div
@@ -120,7 +144,9 @@ const About = () => {
                 >
                   <div className="mb-4 text-primary">{service.icon}</div>
                   <h4 className="mb-2 text-lg font-medium">{service.title}</h4>
-                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {service.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
