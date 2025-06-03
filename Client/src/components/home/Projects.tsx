@@ -6,6 +6,21 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 const projects = [
   {
+    title: "Portfolio",
+    description:
+      "A fully responsive, high-performance portfolio built using Vite, React, TypeScript, and Tailwind CSS. Featuring smooth animations with Framer Motion.",
+    imgUrl: "/portfolio.jpeg",
+    link: "https://portfolio-brown-nu-26.vercel.app/",
+    tags: [
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Framer Motion",
+      "Express.js",
+    ],
+  },
+  {
     title: "Car Website [UI]",
     description:
       "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
@@ -19,7 +34,7 @@ const projects = [
       "A landing page built with Vite to deliver a sleek, responsive, and visually engaging front-end experience.",
     imgUrl: "/Finance.jpeg",
     link: "https://financelandingpage-responsive.vercel.app/",
-    tags: ["Vite", "React", "Tailwind CSS", "Shadcn UI"],
+    tags: ["Vite", "Tailwind CSS", "Shadcn UI"],
   },
   {
     title: "Landing Page",
@@ -28,13 +43,10 @@ const projects = [
     imgUrl: "/resort.jpeg",
     link: "https://travel-x-unravel.vercel.app/",
     tags: [
-      "React",
-      "Tailwind CSS",
-      "Radix UI",
-      "Framer Motion",
-      "TypeScript",
       "Vite",
-      "ESLint",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
     ],
   },
   {
@@ -48,8 +60,6 @@ const projects = [
       "Express.js",
       "React",
       "Node.js",
-      "Bootstrap",
-      "GitHub",
       "REST API",
       "JWT Authentication",
     ],
