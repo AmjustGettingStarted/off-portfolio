@@ -1,26 +1,52 @@
-
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { SectionHeading } from "@/components/ui/AnimatedText";
-import { Calendar, BookOpen } from "lucide-react";
+import {
+  Calendar,
+  BookOpen,
+  Home,
+  Atom,
+  ShoppingCart,
+  Layers,
+} from "lucide-react";
 
-const educationItems = [
+const experienceInfo = [
   {
     id: 1,
-    degree: "School",
-    institution: "Buds Public Academy",
-    duration: "2014 - 2023",
-    description: "Completed Schooling from Buds Public Academy with 88.36% in 10th boards",
-    icon: <BookOpen className="h-10 w-10" />
+    degree: "Kalyani Motors ",
+    jobRole: "Junior Software Engineer",
+    duration: "Mar 2025 - Present",
+    description:
+      "Working on the development and maintenance of the company website using Next.js, Tailwind CSS, and TypeScript. Assisting with UI/UX improvements, optimizing web performance, and collaborating with backend teams to integrate features using Java Spring Boot.",
+    icon: <Home className="h-10 w-10" />,
   },
   {
     id: 2,
-    degree: "High School",
-    institution: "Tinsukia College",
-    duration: "2023 - 2025",
-    description: "Completed High School with PCM and Computer Science from Tinsukia College.",
-    icon: <BookOpen className="h-10 w-10" />
-  }
+    degree: "Contriver",
+    jobRole: "Web Dev Intern",
+    duration: "Jan 2024 - Mar 2024",
+    description:
+      "Maintained and developed key website components, including the footer, ensuring functionality and responsiveness using React.js and Vite",
+    icon: <Layers className="h-10 w-10" />,
+  },
+  {
+    id: 3,
+    degree: "Solar Secure Solutions",
+    jobRole: "Web Dev Intern",
+    duration: "Apr 2023 - Jun 2025",
+    description:
+      "Contributed to the development of a food order e-commerce website, implementing a secure payment gateway and maintaining key components using PHP, MySQL, HTML, CSS, and JavaScript",
+    icon: <ShoppingCart className="h-10 w-10" />,
+  },
+  {
+    id: 4,
+    degree: "NullClass",
+    jobRole: "MERN Intern",
+    duration: "Jan 2023 - Feb 2023",
+    description:
+      "Developed and deployed web applications using the MERN stack, gaining practical experience in full-stack development and modern JavaScript technologies.",
+    icon: <Atom className="h-10 w-10" />,
+  },
 ];
 
 const Education = () => {
@@ -33,7 +59,7 @@ const Education = () => {
         viewport={{ once: true, amount: 0.25 }}
         className="container"
       >
-        <SectionHeading>Education</SectionHeading>
+        <SectionHeading>Experience</SectionHeading>
 
         <div className="mx-auto max-w-4xl">
           <div className="relative">
@@ -42,10 +68,13 @@ const Education = () => {
 
             {/* Timeline items */}
             <div className="space-y-12">
-              {educationItems.map((item, index) => (
+              {experienceInfo.map((item, index) => (
                 <motion.div
                   key={item.id}
-                  variants={fadeIn(index % 2 === 0 ? "right" : "left", 0.2 * index)}
+                  variants={fadeIn(
+                    index % 2 === 0 ? "right" : "left",
+                    0.2 * index
+                  )}
                   className={`relative flex flex-col md:flex-row ${
                     index % 2 === 0 ? "md:flex-row-reverse" : ""
                   }`}
@@ -58,7 +87,9 @@ const Education = () => {
                   {/* Content */}
                   <div
                     className={`ml-16 md:ml-0 md:w-[calc(50%-40px)] ${
-                      index % 2 === 0 ? "md:mr-[40px] md:text-right" : "md:ml-[40px]"
+                      index % 2 === 0
+                        ? "md:mr-[40px] md:text-right"
+                        : "md:ml-[40px]"
                     }`}
                   >
                     <motion.div
@@ -69,16 +100,22 @@ const Education = () => {
                         <div className="rounded-full bg-primary/10 p-3 text-primary">
                           {item.icon}
                         </div>
-                        <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                        <div
+                          className={`flex-1 ${
+                            index % 2 === 0 ? "md:text-right" : ""
+                          }`}
+                        >
                           <h3 className="text-xl font-bold">{item.degree}</h3>
-                          <p className="text-primary">{item.institution}</p>
+                          <p className="text-primary">{item.jobRole}</p>
                         </div>
                       </div>
                       <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
                         <Calendar className="h-4 w-4" />
                         <span>{item.duration}</span>
                       </div>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground">
+                        {item.description}
+                      </p>
                     </motion.div>
                   </div>
                 </motion.div>
