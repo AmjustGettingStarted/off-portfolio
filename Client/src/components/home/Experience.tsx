@@ -3,7 +3,6 @@ import { fadeIn, staggerContainer } from "@/utils/animation";
 import { SectionHeading } from "@/components/ui/AnimatedText";
 import {
   Calendar,
-  BookOpen,
   Home,
   Atom,
   ShoppingCart,

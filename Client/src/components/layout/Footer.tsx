@@ -4,10 +4,26 @@ import { footerVariants } from "@/utils/animation";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: <Github className="h-5 w-5" />, href: "https://github.com/Tushar-Aich", label: "GitHub" },
-  { icon: <Twitter className="h-5 w-5" />, href: "https://x.com/Tushar22848", label: "Twitter" },
-  { icon: <Linkedin className="h-5 w-5" />, href: "https://linkedin.com/in/tushar-aich-30a27a355", label: "LinkedIn" },
-  { icon: <Mail className="h-5 w-5" />, href: "mailto:tusharaich106@gmail.com", label: "Email" },
+  {
+    icon: <Github className="h-5 w-5" />,
+    href: "https://github.com/AmjustGettingStarted",
+    label: "GitHub",
+  },
+  {
+    icon: <Linkedin className="h-5 w-5" />,
+    href: "https://www.linkedin.com/in/harshithmv/",
+    label: "LinkedIn",
+  },
+  {
+    icon: <Mail className="h-5 w-5" />,
+    href: "mailto:tusharaich106@gmail.com",
+    label: "Email",
+  },
+  {
+    icon: <Twitter className="h-5 w-5" />,
+    href: "#",
+    label: "Twitter",
+  },
 ];
 
 const Footer = () => {
@@ -29,7 +45,7 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Portfolio. All rights reserved.
+              © {new Date().getFullYear()} HARSHITH MV
             </p>
           </motion.div>
 
