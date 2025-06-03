@@ -49,9 +49,9 @@ const experienceInfo = [
   },
 ];
 
-const Education = () => {
+const Experience = () => {
   return (
-    <section id="education" className="section bg-secondary/5 py-16">
+    <section id="experience" className="section bg-secondary/5 py-16">
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
@@ -128,4 +128,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Experience;

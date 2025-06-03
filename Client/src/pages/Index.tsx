@@ -7,8 +7,8 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Projects from "@/components/home/Projects";
 import About from "@/components/home/About";
-import Education from "@/components/home/Education";
 import Contact from "@/components/home/Contact";
+import Experience from "@/components/home/Experience";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -42,7 +42,7 @@ const Index = () => {
         <Hero />
         <Projects />
         <About />
-        <Education />
+        <Experience />
         <Contact />
       </main>
       
