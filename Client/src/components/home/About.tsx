@@ -12,14 +12,14 @@ import {
 } from "lucide-react";
 
 const skills = [
-  { name: "NextJS", level: 75, color: "bg-[#0070F3]" }, // Official Next.js blue
-  { name: "TypeScript", level: 60, color: "bg-[#3178C6]" }, // TypeScript blue
+  { name: "NextJS", level: 50, color: "bg-[#0070F3]" }, // Official Next.js blue
+  { name: "TypeScript", level: 50, color: "bg-[#3178C6]" }, // TypeScript blue
   { name: "TailwindCSS", level: 75, color: "bg-[#06B6D4]" }, // Tailwind cyan
-  { name: "React", level: 70, color: "bg-[#61DAFB]" }, // React light blue
+  { name: "React", level: 60, color: "bg-[#61DAFB]" }, // React light blue
   { name: "Java", level: 75, color: "bg-[#F89820]" }, // Java orange
-  { name: "MySQL", level: 85, color: "bg-[#DD8A00]" }, // MySQL warm yellow-orange
-  { name: "Spring", level: 60, color: "bg-[#6DB33F]" }, // Spring green
-  { name: "HTML & CSS", level: 75, color: "bg-[#E44D26]" }, // HTML orange-red
+  { name: "MySQL", level: 75, color: "bg-[#DD8A00]" }, // MySQL warm yellow-orange
+  { name: "Spring", level: 50, color: "bg-[#6DB33F]" }, // Spring green
+  { name: "HTML & CSS", level: 70, color: "bg-[#E44D26]" }, // HTML orange-red
   { name: "JavaScript", level: 70, color: "bg-[#F7DF1E]" }, // JavaScript yellow
   { name: "Mongo DB", level: 50, color: "bg-[#4DB33D]" }, // MongoDB green
   { name: "Git/GitHub", level: 75, color: "bg-[#F05032]" }, // Git red-orange
@@ -86,17 +86,15 @@ const About = () => {
             className="flex flex-col justify-center"
           >
             <h3 className="mb-4 text-2xl font-medium">Get to know me</h3>
-            <p className="mb-4 text-muted-foreground">
-              I'm a passionate developer focused on creating elegant and
-              efficient digital solutions. With expertise in modern web
-              technologies, I combine technical skills with creative thinking to
-              build exceptional user experiences.
+            <p className="mb-6 text-muted-foreground">
+              I'm a developer focused on building efficient and user-friendly
+              digital solutions. I work with modern web technologies to create
+              clean, responsive, and functional applications.
             </p>
             <p className="mb-6 text-muted-foreground">
-              My approach emphasizes clean code, responsive design, and
-              intuitive user interfaces. I'm constantly exploring new
-              technologies and methodologies to deliver cutting-edge solutions
-              that exceed expectations.
+              I prioritize writing clean code, designing intuitive user
+              interfaces, and continuously learning new technologies to improve
+              my work.
             </p>
 
             <div className="mt-6">
