@@ -38,11 +38,11 @@ app.post('/api/v1/sendEmail', async (req, res) => {
             html: `<p>I am ${name}, I have work for you : ${message}. You can contact me at ${email} </p>`
         })
         const res2 = await resend.emails.send({
-            from: `Portfolio <${process.env.DOMAIN}>`,
-            to: email,
-            subject: "Email response | Portfolio",
-            html: `<p>Hello sir/madam, Thank you for reaching me. I have successfully received your email. I will reply back within 2 days. For further queries please reach out at 'tusharaich106@gmail.com'</p>`
-        })
+          from: `Portfolio <${process.env.EMAIL}>`,
+          to: email,
+          subject: "Email response | HARSHITH MV",
+          html: `<p>Thank you for reaching out! I'll review your message and respond as soon as possible. If you have urgent queries, feel free to email me at <a href="mailto:harshithmv2002@gmail.com">harshithmv2002@gmail.com</a>.</p>`,
+        });
 
         console.log("Me : ", res1)
         console.log("You : ", res2)
