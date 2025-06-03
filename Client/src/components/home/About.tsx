@@ -5,17 +5,21 @@ import { SectionHeading } from "@/components/ui/AnimatedText";
 import { Code, Layout, Zap, Database, Server } from "lucide-react";
 
 const skills = [
-  { name: "HTML & CSS", level: 90, color: "bg-[#e34f26]" },
-  { name: "JavaScript", level: 85, color: "bg-[#f7df1e]" },
-  { name: "Express.js", level: 80, color: "bg-[#353535]" },
-  { name: "Node.js", level: 77, color: "bg-[#68a063]" },
-  { name: "React", level: 78, color: "bg-[#61dafb]" },
-  { name: "TypeScript", level: 75, color: "bg-[#3178c6]" },
-  { name: "Prisma ORM", level: 80, color: "bg-[#1B9AAA]" },
-  { name: "Mongoose ORM", level: 79, color: "bg-[#4A2F27]" },
+  { name: "NextJS", level: 75, color: "bg-[#e34f26]" },
+  { name: "TypeScript", level: 60, color: "bg-[#3178c6]" },
+  { name: "TailwindCSS", level: 75, color: "bg-[#e34f26]" },
+  { name: "React", level: 70, color: "bg-[#61dafb]" },
+  { name: "Java", level: 75, color: "bg-[#e34f26]" },
   { name: "MySQL", level: 85, color: "bg-[#00758F]" },
-  { name: "Mongo DB", level: 82, color: "bg-[#116149]" },
-  { name: "Git/GitHub", level: 72, color: "bg-[#181717]" },
+  { name: "Spring", level: 60, color: "bg-[#e34f26]" },
+  { name: "HTML & CSS", level: 75, color: "bg-[#e34f26]" },
+  { name: "JavaScript", level: 70, color: "bg-[#f7df1e]" },
+  // { name: "Express.js", level: 80, color: "bg-[#353535]" },
+  // { name: "Node.js", level: 77, color: "bg-[#68a063]" },
+  // { name: "Prisma ORM", level: 80, color: "bg-[#1B9AAA]" },
+  // { name: "Mongoose ORM", level: 79, color: "bg-[#4A2F27]" },
+  { name: "Mongo DB", level: 50, color: "bg-[#116149]" },
+  { name: "Git/GitHub", level: 75, color: "bg-[#181717]" },
 ];
 
 const services = [
