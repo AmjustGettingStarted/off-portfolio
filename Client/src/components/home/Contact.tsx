@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Map, Mail, Send } from "lucide-react";
-import axios from 'axios'
+import axios from "axios";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,7 +18,9 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -27,44 +29,45 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const { name, email, message, subject } = formData
+    const { name, email, message, subject } = formData;
 
-    if(name === "") {
+    if (name === "") {
       toast({
         title: "Name is empty",
-        description: "Please fill out the name"
-      })
+        description: "Please fill out the name",
+      });
     }
-    if(email === "") {
+    if (email === "") {
       toast({
         title: "email is empty",
-        description: "Please fill out the email"
-      })
+        description: "Please fill out the email",
+      });
     }
-    if(subject === "") {
+    if (subject === "") {
       toast({
         title: "subject is empty",
-        description: "Please fill out the subject"
-      })
+        description: "Please fill out the subject",
+      });
     }
-    if(message === "") {
+    if (message === "") {
       toast({
         title: "message is empty",
-        description: "Please fill out the message"
-      })
+        description: "Please fill out the message",
+      });
     }
 
-    console.log(`${name}, ${email}, ${subject}, ${message}`)
+    console.log(`${name}, ${email}, ${subject}, ${message}`);
 
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/sendEmail`,
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/sendEmail`,
       { name, email, subject, message },
       {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       }
-    )
-    
+    );
+
     // Simulate form submission
     setTimeout(() => {
       toast({
@@ -94,9 +97,13 @@ const Contact = () => {
 
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2">
           <motion.div variants={fadeIn("right", 0.2)}>
-            <h3 className="mb-6 text-2xl font-medium">Let's talk about your project</h3>
+            <h3 className="mb-6 text-2xl font-medium">
+              Let's build something amazing together
+            </h3>
             <p className="mb-8 text-muted-foreground">
-              Feel free to reach out if you want to collaborate with me, have a question, or just want to connect.
+              Have an idea or a project you'd like to discuss? I'm always
+              excited to collaborate, solve problems, and create meaningful
+              experiences. Drop me a message, and let's make it happen!
             </p>
 
             <div className="space-y-6">
@@ -106,7 +113,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium">Email</h4>
-                  <p className="text-muted-foreground">tusharaich106@gmail.com</p>
+                  <p className="text-muted-foreground">
+                    harshithmv2002@gmail.com
+                  </p>
                 </div>
               </div>
 
@@ -116,7 +125,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium">Location</h4>
-                  <p className="text-muted-foreground">Assam, India</p>
+                  <p className="text-muted-foreground">Bengaluru, India</p>
                 </div>
               </div>
             </div>
