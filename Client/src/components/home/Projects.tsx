@@ -6,6 +6,21 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 const projects = [
   {
+    title: "Car Market x GeminiAI",
+    description:
+      "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & a PostgreSQL database via Prisma ORM.",
+    imgUrl: "/aicar.png",
+    link: "https://ai-x-car.vercel.app/",
+    tags: [
+      "NextJS",
+      "Gemini API",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Clerk",
+    ],
+  },
+  {
     title: "Portfolio",
     description:
       "A fully responsive, high-performance portfolio built using Vite, React, TypeScript, and Tailwind CSS. Featuring smooth animations with Framer Motion.",
@@ -42,17 +57,12 @@ const projects = [
       "A landing page built using React, Tailwind CSS, Radix UI, Framer Motion, TypeScript, Vite, and ESLint for a sleek and interactive front-end experience.",
     imgUrl: "/resort.jpeg",
     link: "https://travel-x-unravel.vercel.app/",
-    tags: [
-      "Vite",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
+    tags: ["Vite", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "Stack Overflow [CLONE]",
     description:
-      "A fully functional Q&A platform built using MongoDB, Express.js, React, and Node.js, designed to replicate the core experience of Stack Overflow. Users can post questions, answer queries, upvote/downvote responses, and engage in meaningful discussions.",
+      "A fully functional Q&A platform built using MERN stack, designed to replicate the core experience of Stack Overflow. Users can post questions, answer...",
     imgUrl: "/stackOverflow.jpg",
     link: "https://stackoverflow-clone-fqn3.onrender.com/",
     tags: [
