@@ -88,6 +88,51 @@ const Contact = () => {
     }, 1500);
   };
 
+  // For sending mail
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const { name, email, subject, message } = formData;
+
+    if (!name) {
+      toast({
+        title: "Name is empty",
+        description: "Please fill out the name",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/v1/sendEmail`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent.",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+
   return (
     <section id="contact" className="section bg-secondary/30">
       <motion.div
@@ -208,6 +253,7 @@ const Contact = () => {
                 className="flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-70"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleSendMessage}
               >
                 {isSubmitting ? (
                   "Sending..."
