@@ -6,7 +6,7 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 const projects = [
   {
-    title: "Car Market x GeminiAI",
+    title: "Car Marketplace x GeminiAI",
     description:
       "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & a PostgreSQL database via Prisma ORM.",
     imgUrl: "/aicar.png",
@@ -21,26 +21,26 @@ const projects = [
     ],
   },
   {
+    title: "ConsultX | Doctor Appointment Platform",
+    description:
+      "ConsultX is a full-stack doctor appointment platform built with Next.js and Clerk, featuring a credit-based booking system, secure authentication, subscription plans, PayPal payouts, and an admin dashboard for management.",
+    imgUrl: "/consultx.jpeg",
+    link: "https://apothecary-iota.vercel.app/",
+    tags: [
+      "NextJS",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "PostgreSQL",
+      "Neon",
+      "Vonage",
+    ],
+  },
+  {
     title: "Portfolio",
     description:
       "A fully responsive, high-performance portfolio built using Vite, React, TypeScript, and Tailwind CSS. Featuring smooth animations with Framer Motion.",
     imgUrl: "/portfolio.jpeg",
     link: "https://portfolio-brown-nu-26.vercel.app/",
-    tags: [
-      "Vite",
-      "TypeScript",
-      "Tailwind CSS",
-      "Shadcn UI",
-      "Framer Motion",
-      "Express.js",
-    ],
-  },
-  {
-    title: "ConsultX",
-    description:
-      "ConsultX is a full-stack doctor appointment platform built with Next.js and Clerk, featuring a credit-based booking system, secure authentication, subscription plans, PayPal payouts, and an admin dashboard for management.",
-    imgUrl: "/consultx.jpeg",
-    link: "apothecary-iota.vercel.app",
     tags: [
       "Vite",
       "TypeScript",
