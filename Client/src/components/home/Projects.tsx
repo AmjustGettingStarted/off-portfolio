@@ -36,6 +36,21 @@ const projects = [
     ],
   },
   {
+    title: "ConsultX",
+    description:
+      "ConsultX is a full-stack doctor appointment platform built with Next.js and Clerk, featuring a credit-based booking system, secure authentication, subscription plans, PayPal payouts, and an admin dashboard for management.",
+    imgUrl: "/consultx.jpeg",
+    link: "apothecary-iota.vercel.app",
+    tags: [
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Framer Motion",
+      "Express.js",
+    ],
+  },
+  {
     title: "Car Website [UI]",
     description:
       "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
