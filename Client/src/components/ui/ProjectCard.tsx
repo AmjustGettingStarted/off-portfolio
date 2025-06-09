@@ -52,7 +52,7 @@ const ProjectCard = ({ title, description, imgUrl, link, tags, index }: ProjectC
 
         <div className="p-6">
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-          <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{description.length < 150 ? description : description.slice(0, 150)+"..."} 
+          <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{description.length < 156 ? description : description.slice(0, 156)+"..."} 
             
           </p>
         

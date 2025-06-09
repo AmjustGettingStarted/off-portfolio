@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Car Marketplace x GeminiAI",
     description:
-      "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & a PostgreSQL database via Prisma ORM.",
+      "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & PostgreSQL database via Prisma ORM.",
     imgUrl: "/aicar.png",
     link: "https://ai-x-car.vercel.app/",
     tags: [
@@ -77,7 +77,7 @@ const projects = [
   {
     title: "Stack Overflow [CLONE]",
     description:
-      "A fully functional Q&A platform built using MERN stack, designed to replicate the core experience of Stack Overflow. Users can post questions, answer...",
+      "A fully functional Q&A platform built using the MERN stack, designed to replicate the core experience of Stack Overflow. Users can post questions, answer queries, upvote responses, and engage in meaningful discussions. The platform features JWT-based authentication, a REST API-driven backend, search functionality, and a dynamic, responsive UI, ensuring a seamless and efficient user experience for knowledge sharing.",
     imgUrl: "/stackOverflow.jpg",
     link: "https://stackoverflow-clone-fqn3.onrender.com/",
     tags: [
