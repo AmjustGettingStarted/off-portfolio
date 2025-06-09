@@ -23,6 +23,7 @@ const skills = [
   { name: "JavaScript", level: 70, color: "bg-[#F7DF1E]" }, // JavaScript yellow
   { name: "Mongo DB", level: 50, color: "bg-[#4DB33D]" }, // MongoDB green
   { name: "Git/GitHub", level: 75, color: "bg-[#F05032]" }, // Git red-orange
+  { name: "ShadcnUI", level: 85, color: "bg-[#6B7280]" }, // Neutral gray
   // { name: "Express.js", level: 80, color: "bg-[#353535]" },
   // { name: "Node.js", level: 77, color: "bg-[#68a063]" },
   // { name: "Prisma ORM", level: 80, color: "bg-[#1B9AAA]" },
