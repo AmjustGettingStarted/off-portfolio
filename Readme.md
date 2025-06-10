@@ -1,6 +1,6 @@
 # HMV Portfolio
 
-A modern, responsive portfolio web application built with Vite, React, TypeScript, Tailwind CSS, Framer Motion, and shadcn-ui.
+A modern, responsive portfolio web application built with Vite, React, TypeScript, Tailwind CSS, Framer Motion, and shadcn-ui..
 
 ## Project Info
 
