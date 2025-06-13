@@ -189,4 +189,8 @@ This project is for personal portfolio use. Feel free to customize and use it fo
 
 ---
 
+"Why do programmers prefer dark mode? Because light attracts bugs!" 🐞
+
+---
+
 💝 HMV 💝
