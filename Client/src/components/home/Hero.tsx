@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { ArrowDown } from "lucide-react";
@@ -94,15 +93,17 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="overflow-hidden rounded-2xl border-4 border-primary/20 shadow-xl "
+              className="overflow-hidden mx-auto rounded-2xl border-4 border-primary/20 shadow-xl "
             >
               <motion.img
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                src="/Avatar.jpg"
+                // src="/Avatar.jpg"
+                src="/edit.gif"
+                // src="/coding-typing.gif"
                 alt="Profile"
-                className="h-64 w-64 object-cover object-top "
+                className="h-72 w-72 object-cover object-top "
               />
             </motion.div>
             <motion.div
@@ -111,9 +112,9 @@ const Hero = () => {
             >
               <h3 className="mb-2 text-lg font-medium">About Me</h3>
               <p className="text-sm text-muted-foreground">
-                I'm Harshith MV, a web developer passionate about
-                building intuitive and engaging digital experiences. Excited to
-                learn, grow, and contribute to impactful projects
+                I'm Harshith MV, a web developer passionate about building
+                intuitive and engaging digital experiences. Excited to learn,
+                grow, and contribute to impactful projects
               </p>
             </motion.div>
           </motion.div>
