@@ -50,7 +50,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          HMV ~ PORTFOLIO
+          HMV | PORTFOLIO
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -82,7 +82,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile menu and theme toggle */}
-        <div className="flex items-center md:hidden space-x-2">
+        <div className="flex items-center md:hidden space-x-2 mr-4">
           <motion.button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
@@ -94,7 +94,7 @@ const Navbar = () => {
           </motion.button>
 
           <motion.button
-            className="p-2 mr-4"
+            className="p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -122,11 +122,23 @@ const AnimateMobileMenu = ({
 }) => {
   useEffect(() => {
     if (isOpen) {
+      document.body.style.position = "fixed";
+      document.body.style.top = "0";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
     } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "auto";
     }
     return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
