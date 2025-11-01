@@ -50,14 +50,14 @@ const projects = [
       "Express.js",
     ],
   },
-  {
-    title: "Car Website [UI]",
-    description:
-      "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
-    imgUrl: "/km.jpg",
-    link: "https://k-mold.vercel.app/",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  },
+  // {
+  //   title: "Car Website [UI]",
+  //   description:
+  //     "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
+  //   imgUrl: "/km.jpg",
+  //   link: "https://k-mold.vercel.app/",
+  //   tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+  // },
   {
     title: "Landing Page",
     description:
