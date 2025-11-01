@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { navVariants } from "@/utils/animation";
@@ -69,7 +68,7 @@ const Navbar = () => {
               </motion.li>
             ))}
           </ul>
-          
+
           {/* Theme toggle button */}
           <motion.button
             onClick={toggleTheme}
@@ -93,9 +92,9 @@ const Navbar = () => {
           >
             {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </motion.button>
-          
+
           <motion.button
-            className="p-2"
+            className="p-2 mr-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -106,7 +105,10 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <AnimateMobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <AnimateMobileMenu
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      />
     </motion.header>
   );
 };
@@ -140,7 +142,7 @@ const AnimateMobileMenu = ({
       className="fixed inset-x-0 top-[64px] z-40 overflow-hidden bg-background/95 backdrop-blur-md md:hidden"
     >
       {isOpen && (
-        <motion.nav className="container flex h-full flex-col items-center justify-center">
+        <motion.nav className="container flex h-full flex-col items-center justify-center -mt-12">
           <motion.ul
             initial="hidden"
             animate="show"
