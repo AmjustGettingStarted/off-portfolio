@@ -96,7 +96,7 @@ const Hero = () => {
 
           <motion.div
             variants={fadeIn("left", 0.4)}
-            className="mx-auto flex max-w-md flex-col items-center justify-center md:items-end"
+            className="mx-auto flex max-w-xl flex-col items-center justify-center md:items-end rounded-lg pt-4"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -107,11 +107,12 @@ const Hero = () => {
                 initial={{ scale: 1.2, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
+                // src="/edit.gif"
+                src="/typing.gif"
                 // src="/Avatar.jpg"
-                src="/edit.gif"
                 // src="/coding-typing.gif"
                 alt="Profile"
-                className="h-72 w-72 object-cover object-top "
+                className="object-cover object-top "
               />
             </motion.div>
             <motion.div
