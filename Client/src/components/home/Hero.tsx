@@ -29,7 +29,7 @@ const Hero = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="container mx-auto px-4"
+        className="container mx-auto px-4 mt-4 sm:mt-0"
       >
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
           <div className="text-center md:text-left">
