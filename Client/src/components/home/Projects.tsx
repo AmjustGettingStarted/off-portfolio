@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { staggerContainer } from "@/utils/animation";
 import { SectionHeading } from "@/components/ui/AnimatedText";
@@ -88,6 +87,14 @@ const projects = [
       "REST API",
       "JWT Authentication",
     ],
+  },
+  {
+    title: "Holopin Badge Wall",
+    description:
+      "A visual showcase of earned Holopin badges representing achievements across open source, hackathons, and developer communities. Integrated as part of my portfolio to highlight contributions and milestones.",
+    imgUrl: "/holopin.png",
+    link: "https://www.holopin.io/@amjustgettingstarted",
+    tags: ["Holopin", "Developer Badges", "Community", "Open Source"],
   },
 ];
 
