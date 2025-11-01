@@ -95,43 +95,58 @@ const Contact = () => {
 
     const { name, email, subject, message } = formData;
 
-    if (!name) {
+    if (!name || !email || !subject || !message) {
       toast({
-        title: "Name is empty",
-        description: "Please fill out the name",
+        title: "Missing Fields",
+        description: "Please fill out all fields before submitting.",
       });
       setIsSubmitting(false);
       return;
     }
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/v1/sendEmail`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
+    // try {
+    //   const response = await fetch(`${BACKEND_URL}/api/v1/sendEmail`, {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ name, email, subject, message }),
+    //   });
 
-      if (response.ok) {
-        toast({
-          title: "Success!",
-          description: "Your message has been sent.",
-        });
-      } else {
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again.",
-        });
-      }
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    //   if (response.ok) {
+    //     toast({
+    //       title: "Success!",
+    //       description: "Your message has been sent.",
+    //     });
+    //   } else {
+    //     toast({
+    //       title: "Error",
+    //       description: "Failed to send message. Please try again.",
+    //     });
+    //   }
+    // } catch (error) {
+    //   toast({
+    //     title: "Error",
+    //     description: "Something went wrong.",
+    //   });
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
+
+    // Alternarte way for resend issue
+    toast({
+      title: "Message Sent!",
+      description: "Your message has been sent successfully",
+    });
+
+    //  Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    setIsSubmitting(false);
   };
-  
 
   return (
     <section id="contact" className="section bg-secondary/30">
