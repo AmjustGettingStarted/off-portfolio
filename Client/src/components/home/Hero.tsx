@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { ArrowDown } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
   return (
@@ -43,14 +44,21 @@ const Hero = () => {
               variants={fadeIn("up", 0.2)}
               className="mb-6 text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl"
             >
-              Transforming Ideas Into
-              <span className="relative ml-2 inline-block">
-                Reality
-                <motion.span
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ delay: 1, duration: 1.2, ease: "easeInOut" }}
-                  className="absolute bottom-2 left-0 h-[6px] w-full bg-primary/30"
+              <span className="text-primary">
+                <Typewriter
+                  words={[
+                    "Transforming Ideas Into Reality",
+                    "Building the Future, One Commit at a Time",
+                    "Designs Into Code",
+                    "Problems Into Products",
+                    "Crafting Impact, One Commit at a Time",
+                  ]}
+                  loop={true}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
                 />
               </span>
             </motion.h1>
