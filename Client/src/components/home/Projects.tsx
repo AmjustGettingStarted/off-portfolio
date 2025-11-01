@@ -38,7 +38,7 @@ const projects = [
     title: "Portfolio",
     description:
       "A fully responsive, high-performance portfolio built using Vite, React, TypeScript, and Tailwind CSS. Featuring smooth animations with Framer Motion.",
-    imgUrl: "/portfolio.jpeg",
+    imgUrl: "/portfolio.png",
     link: "https://portfolio-brown-nu-26.vercel.app/",
     tags: [
       "Vite",
