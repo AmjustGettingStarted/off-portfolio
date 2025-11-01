@@ -47,6 +47,7 @@ A showcase portfolio for developers, featuring a beautiful UI, dark/light theme 
 ## Tech Stack
 
 **Frontend:**
+
 - [Vite](https://vitejs.dev/)
 - [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -57,6 +58,7 @@ A showcase portfolio for developers, featuring a beautiful UI, dark/light theme 
 - [Axios](https://axios-http.com/) (for HTTP requests)
 
 **Backend:**
+
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 
@@ -162,24 +164,9 @@ You can deploy the frontend and backend separately or together, depending on you
 - **Backend:** Deploy `server` to [Vercel](https://vercel.com/), [Render](https://render.com/), or [Railway](https://railway.app/).
 
 **Example: Deploying to Vercel**
+
 - Deploy the `Client` folder as a Vercel project (set build command to `npm run build` and output directory to `dist`).
 - Deploy the `server` folder as a separate Vercel project (set build command to `npm run start`).
-
----
-
-## Custom Domain
-
-Custom domains are not supported directly via Lovable. For custom domains, deploy using Netlify or Vercel and configure your domain settings.
-
----
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a pull request
 
 ---
 
@@ -189,7 +176,8 @@ This project is for personal portfolio use. Feel free to customize and use it fo
 
 ---
 
-## "Why do programmers prefer dark mode? 
+## "Why do programmers prefer dark mode?
+
 Because light attracts bugs!" 🐞🐞🐞
 
 ---
