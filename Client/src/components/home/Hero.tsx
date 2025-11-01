@@ -140,7 +140,7 @@ const Hero = () => {
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center"
+        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center -ml-12 -mb-12 md:-mb-0"
       >
         <span className="mb-2 text-sm text-muted-foreground">Scroll Down</span>
         <ArrowDown className="h-5 w-5 text-primary" />
