@@ -82,7 +82,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile menu and theme toggle */}
-        <div className="flex items-center md:hidden space-x-2">
+        <div className="flex items-center md:hidden space-x-2 mr-2">
           <motion.button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
