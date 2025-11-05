@@ -43,7 +43,7 @@ const Navbar = () => {
           : "bg-transparent py-6"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between pr-2 md:pr-0">
         <motion.a
           href="#home"
           className="text-xl font-bold"
