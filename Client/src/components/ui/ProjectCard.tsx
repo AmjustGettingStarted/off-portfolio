@@ -1,7 +1,5 @@
-
 import { motion } from "framer-motion";
 import { fadeIn, scaleInHover } from "@/utils/animation";
-import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 
 type ProjectCardProps = {
@@ -13,7 +11,14 @@ type ProjectCardProps = {
   index: number;
 };
 
-const ProjectCard = ({ title, description, imgUrl, link, tags, index }: ProjectCardProps) => {
+const ProjectCard = ({
+  title,
+  description,
+  imgUrl,
+  link,
+  tags,
+  index,
+}: ProjectCardProps) => {
   return (
     <motion.div
       variants={fadeIn("up", index * 0.1)}
@@ -28,14 +33,14 @@ const ProjectCard = ({ title, description, imgUrl, link, tags, index }: ProjectC
         className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all duration-300 ease-out-expo hover:shadow-xl"
       >
         <div className="relative h-64 w-full overflow-hidden">
-          <img 
-            src={imgUrl} 
-            alt={title} 
-            className="h-full w-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-110" 
+          <img
+            src={imgUrl}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-110"
           />
-          
+
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-300 ease-out-expo group-hover:opacity-100" />
-          
+
           {link && (
             <motion.a
               href={link}
@@ -52,14 +57,13 @@ const ProjectCard = ({ title, description, imgUrl, link, tags, index }: ProjectC
 
         <div className="p-6">
           <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-          <p className="mt-2 line-clamp-3 text-sm text-muted-foreground">{description.length < 156 ? description : description.slice(0, 156)+"..."} 
-            
+          <p className="mt-2 line-clamp-2 text-justify text-sm text-muted-foreground">
+            {description}
           </p>
-        
-        
+
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag, index) => (
-              <span 
+              <span
                 key={index}
                 className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
               >

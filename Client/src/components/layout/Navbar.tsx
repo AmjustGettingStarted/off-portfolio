@@ -43,7 +43,7 @@ const Navbar = () => {
           : "bg-transparent py-6"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between px-4 md:px-0">
         <motion.a
           href="#home"
           className="text-xl font-bold"
@@ -82,7 +82,7 @@ const Navbar = () => {
         </nav>
 
         {/* Mobile menu and theme toggle */}
-        <div className="flex items-center md:hidden space-x-2 mr-4">
+        <div className="flex items-center md:hidden gap-2">
           <motion.button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
