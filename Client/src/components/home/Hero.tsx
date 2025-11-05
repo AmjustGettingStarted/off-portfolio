@@ -49,9 +49,9 @@ const Hero = () => {
                   words={[
                     "Transforming Ideas Into Reality",
                     "Building the Future, One Commit at a Time",
-                    "Designs Into Code",
-                    "Problems Into Products",
-                    "Crafting Impact, One Commit at a Time",
+                    "Where Creativity Meets Clean Code",
+                    "Crafting Digital Experiences That Matter",
+                    "Building Tomorrow, Starting Today",
                   ]}
                   loop={true}
                   cursor
