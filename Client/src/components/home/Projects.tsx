@@ -9,7 +9,7 @@ const projects = [
     description:
       "Inkspire is an AI-powered content creation and sharing platform built with Next.js, designed for writers and creators to capture, organize, and share ideas seamlessly. Features include real-time collaboration, Gemini AI assistance, analytics, and a responsive modern UI.",
     imgUrl: "/inkspire.png",
-    link: "https://inkspire-ai.vercel.app/",
+    link: "https://inkspire-five.vercel.app",
     tags: [
       "NextJS",
       "JavaScript",
@@ -21,7 +21,7 @@ const projects = [
   },
 
   {
-    title: "Car Marketplace x GeminiAI",
+    title: "Car Marketplace | GeminiAI",
     description:
       "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & PostgreSQL database via Prisma ORM.",
     imgUrl: "/aicar.png",
