@@ -67,7 +67,8 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
-            <motion.li whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+            {/* Download Resume */}
+            {/* <motion.li whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
               <a
                 href="/resume.pdf"
                 download="resume.pdf"
@@ -77,7 +78,7 @@ const Navbar = () => {
                 <Download className="mr-1 w-4 h-4" />
                 Resume
               </a>
-            </motion.li>
+            </motion.li> */}
           </ul>
 
           {/* Theme toggle button */}
@@ -198,7 +199,7 @@ const AnimateMobileMenu = ({
                 </a>
               </motion.li>
             ))}
-            <motion.li
+            {/* <motion.li
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 show: { opacity: 1, y: 0 },
@@ -209,13 +210,14 @@ const AnimateMobileMenu = ({
               <a
                 href="/resume.pdf"
                 download="resume.pdf"
-                className="flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+                className="flex items-center gap-1 text-2xl font-medium"
                 title="Download Resume"
               >
-                <Download className="mr-1 w-4 h-4" />
-                Resume
+                <Download className="mr-1" />
+
+                Download Resume
               </a>
-            </motion.li>
+            </motion.li> */}
           </motion.ul>
         </motion.nav>
       )}
