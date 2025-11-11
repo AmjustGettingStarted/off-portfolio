@@ -5,6 +5,22 @@ import ProjectCard from "@/components/ui/ProjectCard";
 
 const projects = [
   {
+    title: "Inkspire | AI Content Platform",
+    description:
+      "Inkspire is an AI-powered content creation and sharing platform built with Next.js, designed for writers and creators to capture, organize, and share ideas seamlessly. Features include real-time collaboration, Gemini AI assistance, analytics, and a responsive modern UI.",
+    imgUrl: "/inkspire.png",
+    link: "https://inkspire-ai.vercel.app/",
+    tags: [
+      "NextJS",
+      "JavaScript",
+      "Convex",
+      "Clerk",
+      "Gemini API",
+      "Tailwind CSS",
+    ],
+  },
+
+  {
     title: "Car Marketplace x GeminiAI",
     description:
       "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & PostgreSQL database via Prisma ORM.",
@@ -13,7 +29,7 @@ const projects = [
     tags: [
       "NextJS",
       "Gemini API",
-      "TypeScript",
+      "JavaScript",
       "Tailwind CSS",
       "PostgreSQL",
       "Clerk",
