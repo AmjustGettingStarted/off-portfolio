@@ -198,6 +198,24 @@ const AnimateMobileMenu = ({
                 </a>
               </motion.li>
             ))}
+            <motion.li
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <a
+                href="/resume.pdf"
+                download="resume.pdf"
+                className="flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+                title="Download Resume"
+              >
+                <Download className="mr-1 w-4 h-4" />
+                Resume
+              </a>
+            </motion.li>
           </motion.ul>
         </motion.nav>
       )}
