@@ -29,7 +29,7 @@ const projects = [
     tags: [
       "NextJS",
       "Gemini API",
-      "TypeScript",
+      "JavaScript",
       "Tailwind CSS",
       "PostgreSQL",
       "Clerk",
