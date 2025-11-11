@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { navVariants } from "@/utils/animation";
 import { cn } from "@/lib/utils";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 
 const navLinks = [
@@ -67,6 +67,17 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
+            <motion.li whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+              <a
+                href="/resume.pdf"
+                download="resume.pdf"
+                className="flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+                title="Download Resume"
+              >
+                <Download className="mr-1 w-4 h-4" />
+                Resume
+              </a>
+            </motion.li>
           </ul>
 
           {/* Theme toggle button */}
