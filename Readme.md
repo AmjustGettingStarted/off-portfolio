@@ -17,8 +17,6 @@ A modern, full-stack portfolio web application featuring a responsive UI, animat
 - [Project Scripts](#project-scripts)
 - [Configuration](#configuration)
 - [Deployment](#deployment)
-- [Custom Domain](#custom-domain)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -176,10 +174,14 @@ This project is for personal portfolio use. Feel free to customize and use it fo
 
 ---
 
-## "Why do programmers prefer dark mode?
+## Why do programmers prefer dark mode?
 
-Because light attracts bugs!" 🐞🐞🐞
+Because light attracts bugs!
 
 ---
 
-💝 HMV 💝
+<div align="center">
+HMV | Portfolio
+</div>
+
+
