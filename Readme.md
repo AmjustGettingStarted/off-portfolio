@@ -1,5 +1,4 @@
-# HMV | PORTFOLIO - TEST
-
+HMV | PORTFOLIO
 
 A modern, full-stack portfolio web application featuring a responsive UI, animated transitions, and a Node.js backend. Built with Vite, React, TypeScript, Tailwind CSS, Framer Motion, shadcn-ui, and Express.
 
