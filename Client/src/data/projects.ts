@@ -97,7 +97,6 @@ export const projects = [
       "Zod",
       "Tailwind CSS",
       "Shadcn UI",
-      "Framer Motion",
     ],
   },
 
