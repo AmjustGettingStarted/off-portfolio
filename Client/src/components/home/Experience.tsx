@@ -50,7 +50,7 @@ const experienceInfo = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="section bg-secondary/5 py-16">
+    <section id="experience" className="section bg-background py-16">
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
@@ -74,9 +74,8 @@ const Experience = () => {
                     index % 2 === 0 ? "right" : "left",
                     0.2 * index
                   )}
-                  className={`relative flex flex-col md:flex-row ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : ""
-                  }`}
+                  className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    }`}
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full border-4 border-background bg-primary/20 md:left-1/2 md:-translate-x-1/2">
@@ -85,11 +84,10 @@ const Experience = () => {
 
                   {/* Content */}
                   <div
-                    className={`ml-16 md:ml-0 md:w-[calc(50%-40px)] ${
-                      index % 2 === 0
+                    className={`ml-16 md:ml-0 md:w-[calc(50%-40px)] ${index % 2 === 0
                         ? "md:mr-[40px] md:text-right"
                         : "md:ml-[40px]"
-                    }`}
+                      }`}
                   >
                     <motion.div
                       whileHover={{ scale: 1.02 }}
@@ -100,9 +98,8 @@ const Experience = () => {
                           {item.icon}
                         </div>
                         <div
-                          className={`flex-1 ${
-                            index % 2 === 0 ? "md:text-right" : ""
-                          }`}
+                          className={`flex-1 ${index % 2 === 0 ? "md:text-right" : ""
+                            }`}
                         >
                           <h3 className="text-xl font-bold">{item.degree}</h3>
                           <p className="text-primary">{item.jobRole}</p>

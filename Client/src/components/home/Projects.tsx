@@ -6,7 +6,7 @@ import { projects } from "@/data/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" className="section bg-secondary/30">
+    <section id="projects" className="section bg-background">
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
