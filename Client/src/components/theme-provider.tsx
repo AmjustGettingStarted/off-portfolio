@@ -10,12 +10,14 @@ type ThemeProviderProps = {
 }
 
 type ThemeProviderState = {
-  theme: Theme
-  setTheme: (theme: Theme) => void
+  theme: Theme;
+  resolvedTheme: "light" | "dark";
+  setTheme: (theme: Theme) => void;
 }
 
 const initialState: ThemeProviderState = {
   theme: "system",
+  resolvedTheme: "dark",
   setTheme: () => null,
 }
 
@@ -31,30 +33,34 @@ export function ThemeProvider({
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )
 
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("dark");
+
   useEffect(() => {
-    const root = window.document.documentElement
-    
-    root.classList.remove("light", "dark")
-    
+    const root = document.documentElement;
+
+    root.classList.remove("light", "dark");
+
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
-        : "light"
-      
-      root.classList.add(systemTheme)
-      return
-    }
-    
-    root.classList.add(theme)
-  }, [theme])
+        : "light";
 
+      root.classList.add(systemTheme);
+      setResolvedTheme(systemTheme);
+      return;
+    }
+
+    root.classList.add(theme);
+    setResolvedTheme(theme);
+  }, [theme]);
   const value = {
     theme,
+    resolvedTheme,
     setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme)
-      setTheme(theme)
+      localStorage.setItem(storageKey, theme);
+      setTheme(theme);
     },
-  }
+  };
 
   return (
     <ThemeProviderContext.Provider {...props} value={value}>
@@ -65,9 +71,9 @@ export function ThemeProvider({
 
 export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
-  
+
   if (context === undefined)
     throw new Error("useTheme must be used within a ThemeProvider")
-    
+
   return context
 }
