@@ -1,151 +1,143 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
-import { ArrowDown } from "lucide-react";
-import { Typewriter } from "react-simple-typewriter";
+import { ArrowUpRight } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const Hero = () => {
+  const { resolvedTheme } = useTheme();
+
+  const heroBackground =
+    resolvedTheme === "dark"
+      ? "/hero-background.png"
+      : "/hero-background-light.png";
+
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center py-16"
+      className={`relative h-screen overflow-hidden transition-colors duration-500 ${resolvedTheme === "dark" ? "bg-background text-foreground" : "bg-[#F7F6F2] text-[#1A1A1A]"
+        }`}
     >
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ duration: 1.5, delay: 0.2 }}
-          className="absolute -right-[10%] top-[10%] h-[400px] w-[400px] rounded-full bg-primary/10 blur-[100px]"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute -left-[5%] bottom-[10%] h-[300px] w-[300px] rounded-full bg-primary/10 blur-[100px]"
-        />
-      </div>
+      {/* Background Image: Responsive opacity & alignment for clear text readability on mobile/tablet */}
+      <img
+        src={heroBackground}
+        alt="Hero Background"
+        className="absolute inset-0 z-0 h-full w-full object-cover object-center lg:object-right pointer-events-none select-none transition-opacity duration-500 opacity-30 md:opacity-70 lg:opacity-100"
+      />
 
+      {/* Responsive Left & Top Overlay Gradient (Fixes background bleed on mobile & desktop) */}
+      <div
+        className={`absolute inset-0 z-[1] transition-all duration-500 ${resolvedTheme === "dark"
+            ? "bg-gradient-to-b from-black/80 via-black/60 to-background md:bg-gradient-to-r md:from-black md:via-black/75 md:to-transparent"
+            : "bg-gradient-to-b from-[#F7F6F2]/95 via-[#F7F6F2]/80 to-[#F7F6F2] md:bg-gradient-to-r md:from-[#F7F6F2] md:via-[#F4F4F0]/85 md:to-transparent"
+          }`}
+      />
+
+      {/* Vignette */}
+      <div
+        className="absolute inset-0 z-[2]"
+        style={{
+          background:
+            resolvedTheme === "dark"
+              ? "radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.45))"
+              : "radial-gradient(circle at center, transparent 45%, rgba(217,217,217,.25))",
+        }}
+      />
+
+      {/* Hero Content */}
       <motion.div
-        variants={staggerContainer(0.1, 0.1)}
+        variants={staggerContainer(0.15, 0.15)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
-        className="container mx-auto px-4 mt-4 sm:mt-0"
+        viewport={{ once: true }}
+        className="absolute left-6 top-1/2 z-20 w-full max-w-[850px] -translate-y-[52%] pr-12 sm:left-8 md:left-16 xl:left-24"
       >
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
-          <div className="text-center md:text-left">
-            <motion.div
-              variants={fadeIn("down")}
-              className="mb-4 inline-block rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground"
-            >
-              Welcome To My Portfolio
-            </motion.div>
-
-            <motion.h1
-              variants={fadeIn("up", 0.2)}
-              className="mb-6 text-4xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl"
-            >
-              <span className="text-primary">
-                <Typewriter
-                  words={[
-                    "Transforming Ideas Into Reality",
-                    "Building the Future, One Commit at a Time",
-                    "Where Creativity Meets Clean Code",
-                    "Crafting Digital Experiences That Matter",
-                    "Building Tomorrow, Starting Today",
-                  ]}
-                  loop={true}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={70}
-                  deleteSpeed={50}
-                  delaySpeed={1500}
-                />
-              </span>
-            </motion.h1>
-
-            <motion.p
-              variants={fadeIn("up", 0.3)}
-              className="mb-8 text-lg text-muted-foreground md:text-xl"
-            >
-              Bringing ideas to life through seamless, elegant digital
-              solutions. Let's create something extraordinary together!
-            </motion.p>
-
-            <motion.div
-              variants={fadeIn("up", 0.4)}
-              className="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-x-4 sm:space-y-0"
-            >
-              <motion.a
-                href="#projects"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View My Work
-              </motion.a>
-              <motion.a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-lg border border-border bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-secondary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get In Touch
-              </motion.a>
-            </motion.div>
-          </div>
-
-          <motion.div
-            variants={fadeIn("left", 0.4)}
-            className="mx-auto flex max-w-xl flex-col items-center justify-center md:items-end rounded-lg pt-4"
+        {/* Heading: Responsive font sizes to fit nicely on all viewports */}
+        <motion.h1
+          variants={fadeIn("up", 0.15)}
+          className="mt-4 md:mt-8 font-black tracking-[-0.07em] leading-[0.88] md:leading-[0.84] text-[48px] sm:text-[68px] md:text-[88px] lg:text-[110px] xl:text-[122px]"
+        >
+          <span className="block">Designing</span>
+          <span className="block">Digital</span>
+          <span
+            className={`block ${resolvedTheme === "dark" ? "text-white/35" : "text-[#2F2F2F]/40"
+              }`}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="overflow-hidden mx-auto rounded-2xl border-4 border-primary/20 shadow-xl "
-            >
-              <motion.img
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                // src="/edit.gif"
-                src="/typing.gif"
-                // src="/Avatar.jpg"
-                // src="/coding-typing.gif"
-                alt="Profile"
-                className="object-cover object-top "
-              />
-            </motion.div>
-            <motion.div
-              variants={fadeIn("up", 0.5)}
-              className="mt-4 rounded-lg bg-card p-4 shadow-lg"
-            >
-              <h3 className="mb-2 text-lg font-medium">About Me</h3>
-              <p className="text-sm text-muted-foreground">
-                I'm Harshith MV, a web developer passionate about building
-                intuitive and engaging digital experiences. Excited to learn,
-                grow, and contribute to impactful projects
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
+            Experiences.
+          </span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          variants={fadeIn("up", 0.25)}
+          className={`mt-6 md:mt-10 max-w-[560px] text-base leading-7 sm:text-lg sm:leading-9 md:text-xl ${resolvedTheme === "dark" ? "text-white/55" : "text-[#4A4A4A]"
+            }`}
+        >
+          I build intuitive, elegant and high-performance web experiences that
+          connect{" "}
+          <span
+            className={`font-medium ${resolvedTheme === "dark" ? "text-white" : "text-[#1A1A1A]"
+              }`}
+          >
+            ideas to impact.
+          </span>
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          variants={fadeIn("up", 0.35)}
+          className="mt-8 md:mt-12 flex flex-wrap items-center gap-4 sm:gap-5"
+        >
+          <motion.a
+            href="#projects"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className={`inline-flex items-center gap-2 rounded-full px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold transition-all ${resolvedTheme === "dark"
+                ? "bg-white text-black"
+                : "bg-[#1A1A1A] text-[#F7F6F2] hover:bg-[#2F2F2F]"
+              }`}
+          >
+            View My Work
+            <ArrowUpRight size={18} />
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className={`inline-flex items-center gap-2 rounded-full border px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold backdrop-blur-md transition-all ${resolvedTheme === "dark"
+                ? "border-white/15 bg-white/5 text-white hover:border-white/40 hover:bg-white/10"
+                : "border-black/15 bg-black/5 text-[#1A1A1A] hover:border-black/30 hover:bg-black/10"
+              }`}
+          >
+            Get In Touch
+            <ArrowUpRight size={18} />
+          </motion.a>
+        </motion.div>
       </motion.div>
 
-      <motion.a
-        href="#projects"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 1.2,
-          duration: 1,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "reverse",
+      {/* Decorative Glow Ring / Ambient Light */}
+      <div
+        className={`pointer-events-none absolute right-[15%] top-1/2 z-[3] hidden h-[700px] w-[700px] -translate-y-1/2 rounded-full blur-[140px] xl:block ${resolvedTheme === "dark" ? "bg-white/[0.03]" : "bg-black/[0.03]"
+          }`}
+      />
+
+      {/* Subtle Fine-Art Paper Texture Noise */}
+      <div
+        className="pointer-events-none absolute inset-0 z-[4] opacity-[0.04] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url('https://grainy-gradients.vercel.app/noise.svg')",
+          backgroundRepeat: "repeat",
         }}
-        className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center justify-center -ml-12 -mb-12 md:-mb-0"
-      >
-        <span className="mb-2 text-sm text-muted-foreground">Scroll Down</span>
-        <ArrowDown className="h-5 w-5 text-primary" />
-      </motion.a>
+      />
+
+      {/* Bottom Fade: Smooth transition into the Projects section */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 z-[5] h-32 pointer-events-none transition-colors duration-500 ${resolvedTheme === "dark"
+            ? "bg-gradient-to-t from-background to-transparent"
+            : "bg-gradient-to-t from-white via-white/80 to-transparent"
+          }`}
+      />
     </section>
   );
 };
