@@ -149,7 +149,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section bg-secondary/30">
+    <section id="contact" className="section bg-background">
       <motion.div
         variants={staggerContainer()}
         initial="hidden"
