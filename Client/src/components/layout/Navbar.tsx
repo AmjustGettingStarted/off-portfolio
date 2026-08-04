@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X, Sun, Moon, Download } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 
+
 const navLinks = [
   { title: "Home", href: "#home" },
   { title: "Projects", href: "#projects" },
@@ -37,7 +38,7 @@ const Navbar = () => {
       initial="hidden"
       animate="show"
       className={cn(
-        "fixed top-0 left-0 z-20 w-full transition-all duration-300 ease-out-expo",
+        "fixed top-0 left-0 z-40 w-full transition-all duration-300 ease-out-expo",
         isScrolled
           ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm py-4"
           : "bg-transparent py-6"
@@ -155,6 +156,8 @@ const AnimateMobileMenu = ({
     };
   }, [isOpen]);
 
+  const { resolvedTheme } = useTheme();
+
   return (
     <motion.div
       initial={{ height: 0, opacity: 0 }}
@@ -163,7 +166,10 @@ const AnimateMobileMenu = ({
         opacity: isOpen ? 1 : 0,
       }}
       transition={{ duration: 0.3, ease: [0.25, 0.25, 0.25, 0.75] }}
-      className="fixed inset-x-0 top-[64px] z-40 overflow-hidden bg-background/95 backdrop-blur-md md:hidden"
+      className={`fixed inset-x-0 top-[64px] z-[50] overflow-hidden backdrop-blur-md md:hidden transition-colors duration-300 ${resolvedTheme === "dark"
+        ? "bg-background/95"
+        : "bg-[#F7F6F2]/95" // Matches the light mode Hero background perfectly
+        }`}
     >
       {isOpen && (
         <motion.nav className="container flex h-full flex-col items-center justify-center -mt-12">
