@@ -44,10 +44,10 @@ const Projects = () => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -translateX]);
 
   return (
-    <section ref={targetRef} className="relative h-[450vh] bg-background">
-      <div className="sticky top-0 flex h-screen flex-col justify-start pt-20 sm:pt-24 overflow-hidden">
+    <section ref={targetRef} className="relative h-[450vh] bg-background" id="projects">
+      <div className="sticky top-0 flex h-screen flex-col justify-start pt-24 overflow-hidden">
 
-        <div className="container mb-6 sm:mb-8 px-6 sm:px-12">
+        <div className="container sm:mb-4 px-6 sm:px-12">
           <SectionHeading>Featured Projects</SectionHeading>
         </div>
 
@@ -76,13 +76,14 @@ const Projects = () => {
           {/* 5th Skeleton "View All" Card */}
           <div className="w-[85vw] sm:w-[45vw] lg:w-[32vw] shrink-0">
             <a href="#all-projects" className="group block h-full">
-              <div className="relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-border/80 bg-card/60 shadow-md backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl">
+              <div className="relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-border/80 bg-card/60 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
 
                 {/* Image Placeholder slot */}
-                <div className="relative h-64 w-full bg-muted/40 overflow-hidden flex items-center justify-center">
+                <div className="relative h-60 w-full bg-muted/40 overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/20 to-transparent animate-pulse" />
 
-                  <div className="rounded-full bg-primary/90 p-4 text-primary-foreground shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  {/* Hidden by default, fades and scales in on hover */}
+                  <div className="rounded-full bg-primary/90 p-4 text-primary-foreground shadow-lg opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
                     <ArrowUpRight className="h-6 w-6" />
                   </div>
                 </div>
@@ -98,7 +99,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 flex items-center justify-between border-t border-border/40">
+                  <div className="sm:mt-6 pt-4 flex items-center justify-between border-t border-border/40">
                     <span className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                       View All Projects →
                     </span>
