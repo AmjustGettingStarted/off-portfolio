@@ -45,9 +45,9 @@ const Projects = () => {
 
   return (
     <section ref={targetRef} className="relative h-[450vh] bg-background" id="projects">
-      <div className="sticky top-0 flex h-screen flex-col justify-start pt-16 sm:pt-24 overflow-hidden">
+      <div className="sticky top-0 flex h-screen flex-col justify-start pt-24 overflow-hidden">
 
-        <div className="container  px-6 sm:px-12">
+        <div className="container sm:mb-4 px-6 sm:px-12">
           <SectionHeading>Featured Projects</SectionHeading>
         </div>
 
@@ -99,7 +99,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 flex items-center justify-between border-t border-border/40">
+                  <div className="sm:mt-6 pt-4 flex items-center justify-between border-t border-border/40">
                     <span className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                       View All Projects →
                     </span>
