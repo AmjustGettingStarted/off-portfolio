@@ -32,14 +32,14 @@ const ProjectCard = ({
         variants={scaleInHover}
         className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all duration-300 ease-out-expo hover:shadow-xl"
       >
-        <div className="relative h-64 w-full overflow-hidden">
+        <div className="relative h-60 w-full overflow-hidden">
           <img
             src={imgUrl}
             alt={title}
-            className="h-full w-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-110"
+            className="h-full w-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-300 ease-out-expo group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 transition-opacity duration-300 ease-out-expo group-hover:opacity-30" />
 
           {link && (
             <motion.a
@@ -56,7 +56,7 @@ const ProjectCard = ({
         </div>
 
         <div className="p-6">
-          <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
+          <h3 className="text-xl font-semibold tracking-tight line-clamp-1">{title}</h3>
           <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
             {description}
           </p>
