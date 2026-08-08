@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/AnimatedText";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { projects } from "@/data/projects";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const featuredProjects = projects.slice(0, 4);
@@ -75,7 +76,7 @@ const Projects = () => {
 
           {/* 5th Skeleton "View All" Card */}
           <div className="w-[85vw] sm:w-[45vw] lg:w-[32vw] shrink-0">
-            <a href="#all-projects" className="group block h-full">
+            <Link to="/projects" className="group block h-full">
               <div className="relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-border/80 bg-card/60 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
 
                 {/* Image Placeholder slot */}
@@ -110,7 +111,7 @@ const Projects = () => {
                 </div>
 
               </div>
-            </a>
+            </Link>
           </div>
         </motion.div>
 
