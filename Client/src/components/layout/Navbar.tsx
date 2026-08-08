@@ -7,11 +7,11 @@ import { useTheme } from "@/components/theme-provider";
 
 
 const navLinks = [
-  { title: "Home", href: "#home" },
-  { title: "Projects", href: "#projects" },
-  { title: "About", href: "#about" },
-  { title: "Career", href: "#experience" },
-  { title: "Contact", href: "#contact" },
+  { title: "Home", href: "/" },
+  { title: "Projects", href: "/projects" },
+  { title: "About", href: "/#about" },
+  { title: "Career", href: "/#experience" },
+  { title: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <motion.a
-          href="#home"
+          href="/"
           className="text-xl font-bold"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
