@@ -32,12 +32,12 @@ const Index = () => {
   return (
     <PageTransition>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-foreground/30 origin-left z-50"
         style={{ scaleX }}
       />
-      
+
       <Navbar />
-      
+
       <main>
         <Hero />
         <Projects />
@@ -45,7 +45,7 @@ const Index = () => {
         <Experience />
         <Contact />
       </main>
-      
+
       <Footer />
     </PageTransition>
   );
