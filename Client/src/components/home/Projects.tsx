@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/AnimatedText";
 import ProjectCard from "@/components/ui/ProjectCard";
-import { projects } from "@/data/projects";
+import { projects } from "@/data/projects_homepage";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
@@ -17,14 +17,12 @@ const Projects = () => {
       if (scrollContainerRef.current) {
         const totalWidth = scrollContainerRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
-        // Total scrollable distance to bring the trailing edge flush with the viewport
         setTranslateX(totalWidth - viewportWidth);
       }
     };
 
     updateWidth();
 
-    // Track both window resize and element dimension updates (crucial for mobile/dev tools)
     window.addEventListener("resize", updateWidth);
 
     const resizeObserver = new ResizeObserver(() => updateWidth());
@@ -57,10 +55,14 @@ const Projects = () => {
           style={{ x }}
           className="flex gap-6 sm:gap-8 px-6 sm:px-12 w-max items-stretch"
         >
-          {/* 4 Featured Project Cards */}
+          {/* All 4 Mapped Project Cards wrapped with Motion */}
           {featuredProjects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, scale: 0.95, y: 12 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
               className="w-[85vw] sm:w-[45vw] lg:w-[32vw] shrink-0"
             >
               <ProjectCard
@@ -71,25 +73,28 @@ const Projects = () => {
                 tags={project.tags}
                 index={index}
               />
-            </div>
+            </motion.div>
           ))}
 
           {/* 5th Skeleton "View All" Card */}
-          <div className="w-[85vw] sm:w-[45vw] lg:w-[32vw] shrink-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+            className="w-[85vw] sm:w-[45vw] lg:w-[32vw] shrink-0"
+          >
             <Link to="/projects" className="group block h-full">
               <div className="relative flex flex-col justify-between h-full overflow-hidden rounded-xl border border-border/80 bg-card/60 shadow-md backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
 
-                {/* Image Placeholder slot */}
                 <div className="relative h-60 w-full bg-muted/40 overflow-hidden flex items-center justify-center">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/20 to-transparent animate-pulse" />
 
-                  {/* Hidden by default, fades and scales in on hover */}
                   <div className="rounded-full bg-primary/90 p-4 text-primary-foreground shadow-lg opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300">
                     <ArrowUpRight className="h-6 w-6" />
                   </div>
                 </div>
 
-                {/* Content Area */}
                 <div className="p-6 flex flex-col flex-1 justify-between">
                   <div>
                     <div className="h-6 w-2/3 rounded-md bg-muted/60 animate-pulse mb-3" />
@@ -112,7 +117,7 @@ const Projects = () => {
 
               </div>
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
 
       </div>
