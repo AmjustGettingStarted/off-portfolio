@@ -19,7 +19,7 @@ export const projects = [
     title: "Car Marketplace | GeminiAI",
     description:
       "This is a modern car marketplace web application built with Next.js, leveraging server-side rendering, authentication & PostgreSQL database via Prisma ORM.",
-    imgUrl: "/aicar.png",
+    imgUrl: "/aicar.gif",
     link: "https://ai-x-car.vercel.app/",
     tags: [
       "NextJS",
@@ -34,7 +34,7 @@ export const projects = [
     title: "ConsultX | Doctor Appointment Platform",
     description:
       "ConsultX is a full-stack doctor appointment platform built with Next.js and Clerk, featuring a credit-based booking system, secure authentication, subscription plans, PayPal payouts, and an admin dashboard for management.",
-    imgUrl: "/consultx.jpeg",
+    imgUrl: "/consultx.png",
     link: "https://apothecary-iota.vercel.app/",
     tags: [
       "NextJS",
@@ -43,6 +43,36 @@ export const projects = [
       "PostgreSQL",
       "Neon",
       "Vonage",
+    ],
+  },
+  {
+    title: "GymPro | Fitness & Workout Tracker",
+    description:
+      "A modern, full-stack fitness and progress tracking application built for lifters. Log workouts with automatic volume calculations, track estimated 1RMs, manage custom exercise libraries and templates, and visualize long-term strength progression with interactive charts.",
+    imgUrl: "/gympro.jpg",
+    link: "https://gym-progress-tracker-kohl.vercel.app/",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Supabase",
+      "PostgreSQL",
+      "Recharts",
+    ],
+  },
+  {
+    title: "Anime News CLI",
+    description: "A lightweight Node.js command-line tool published on NPM that fetches real-time anime news feeds via Google News RSS with interactive terminal prompts.",
+    imgUrl: "/anime-cli.jpg",
+    link: "https://github.com/AmjustGettingStarted/Anime-News-CLI",
+    tags: [
+      "Node.js",
+      "CLI",
+      "NPM Package",
+      "Open Source",
+      "RSS Parser",
+      "JavaScript",
     ],
   },
   {
@@ -60,14 +90,82 @@ export const projects = [
       "Express.js",
     ],
   },
-  // {
-  //   title: "Car Website [UI]",
-  //   description:
-  //     "A frontend-driven project developed as part of my training, leveraging modern web technologies to create interactive and responsive user experiences",
-  //   imgUrl: "/km.jpg",
-  //   link: "https://k-mold.vercel.app/",
-  //   tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-  // },
+  {
+    title: "Vanguard | Digital Collective",
+    description: "A dark-mode hero exploration featuring aggressive typography, dynamic layout transitions, and high-impact visual aesthetics for creative brand studios.",
+    imgUrl: "/vanguard.gif",
+    link: "https://vanguard-herosection-ai.vercel.app",
+    tags: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Motion",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "Nike | Lab Concept",
+    description: "An interactive landing hero showcasing advanced GSAP and Framer Motion animations with dynamic cursor reveals and high-performance product presentation.",
+    imgUrl: "/nike.png",
+    link: "https://nike-landing-page-ai.vercel.app",
+    tags: [
+      "React 19",
+      "GSAP",
+      "Framer Motion",
+      "Tailwind CSS",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "Foldcraft | Visual Studio",
+    description: "An immersive dark-theme landing page design featuring dynamic atmospheric visual lighting, smooth motion transitions, and expressive typography.",
+    imgUrl: "/foldcraft.gif",
+    link: "https://ocean-hero-ai.vercel.app",
+    tags: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Wouter",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "DALA | AI Knowledge Engine",
+    description: "A full interactive landing page featuring dynamic background state transitions, reactive particle effects, and scroll-driven UI transformations.",
+    imgUrl: "/dala.png",
+    link: "https://dala-landing-page-276623258005.asia-southeast1.run.app",
+    tags: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Motion",
+      "Google GenAI",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "Blackhole AI Hero Concept",
+    description: "A cosmic, dark-mode landing hero featuring interactive black hole particle animations, Firebase integrations, and Google GenKit AI workflows.",
+    imgUrl: "/blackhole.gif",
+    link: "https://blackhole-like-hero.vercel.app",
+    tags: [
+      "Next.js 15",
+      "React 19",
+      "GenKit AI",
+      "Firebase",
+      "Tailwind CSS",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "Landing Page",
+    description:
+      "A landing page built using React, Tailwind CSS, Radix UI, Framer Motion, TypeScript, Vite, and ESLint for a sleek and interactive front-end experience.",
+    imgUrl: "/resort.png",
+    link: "https://travel-x-unravel.vercel.app/",
+    tags: ["Vite", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
   {
     title: "Landing Page",
     description:
@@ -75,14 +173,6 @@ export const projects = [
     imgUrl: "/Finance.jpeg",
     link: "https://financelandingpage-responsive.vercel.app/",
     tags: ["Vite", "Tailwind CSS", "Shadcn UI"],
-  },
-  {
-    title: "Landing Page",
-    description:
-      "A landing page built using React, Tailwind CSS, Radix UI, Framer Motion, TypeScript, Vite, and ESLint for a sleek and interactive front-end experience.",
-    imgUrl: "/resort.jpeg",
-    link: "https://travel-x-unravel.vercel.app/",
-    tags: ["Vite", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
     title: "Bounty Wizard | Multi-Step Form Builder",
