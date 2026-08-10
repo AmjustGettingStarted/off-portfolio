@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type Project = {
     title: string;
@@ -15,70 +21,104 @@ type ProjectGridCardProps = {
 };
 
 export default function ProjectGridCard({ project, index }: ProjectGridCardProps) {
-    const indexFormatted = `/${String(index + 1).padStart(2, "0")}`;
+    const indexFormatted = `#${String(index + 1).padStart(2, "0")}`;
+    const [primaryTag] = project.tags;
+
+    // Only show tooltip if description is long enough to potentially truncate
+    const isDescriptionLong = project.description.length > 100;
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.4, delay: index * 0.08 }}
-            className="w-full"
-        >
-            <a
-                href={project.link || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block w-full overflow-hidden rounded-2xl border border-border/60 bg-black/80 shadow-md transition-all duration-500 p-6 h-[380px] hover:h-[440px] flex flex-col justify-between"
+        <TooltipProvider>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="w-full"
             >
-                {/* Background Image with Blur, Zoom & Contrast Shift */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out group-hover:scale-105 filter brightness-[0.25] blur-[3px] group-hover:brightness-[0.50] group-hover:blur-0"
-                    style={{ backgroundImage: `url(${project.imgUrl})` }}
-                />
+                <a
+                    href={project.link || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative flex flex-col w-full h-auto p-1 rounded-3xl border border-neutral-200 dark:border-white/0 bg-white dark:bg-neutral-900/60 shadow-md transition-all duration-300 hover:border-neutral-300 dark:hover:border-white/20"
+                >
+                    {/* Image Section with subtle inner border */}
+                    <div className="relative h-[230px] w-full shrink-0 overflow-hidden rounded-3xl border border-black/5 dark:border-white/[0.08]">
+                        <div
+                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
+                            style={{ backgroundImage: `url(${project.imgUrl})` }}
+                        />
 
-                {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black/60 transition-opacity duration-500 group-hover:bg-black/40" />
+                        {/* Gradient overlay for text contrast */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-                {/* Content Container */}
-                <div className="relative z-10 flex flex-col justify-between h-full text-white">
+                        {/* Title & Primary Tag at Top */}
+                        <div className="absolute top-0 inset-x-0 p-3">
+                            <h3 className="truncate text-sm font-bold tracking-tight text-white">
+                                {project.title}
+                            </h3>
+                            {primaryTag && (
+                                <p className="mt-0.5 truncate text-[11px] font-medium text-white/70">
+                                    {primaryTag}
+                                </p>
+                            )}
+                        </div>
 
-                    {/* Top Bar: Index & Main Tag */}
-                    <div className="flex items-center justify-between">
-                        <span className="text-lg font-mono text-white/50 group-hover:text-white/80 transition-colors font-bold">
-                            {indexFormatted}
-                        </span>
-                        {project.tags[0] && (
-                            <span className="text-[11px] uppercase tracking-wider text-white/60 group-hover:text-white/90 transition-colors font-semibold px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/10">
-                                {project.tags[0]}
-                            </span>
-                        )}
-                    </div>
+                        {/* Tags overlay at the bottom left of image section, shown on hover */}
+                        <div className="absolute bottom-3 left-3 right-14 flex flex-wrap gap-1 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            {project.tags.slice(0, 6).map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="rounded-full bg-black/50 backdrop-blur-md px-2 py-0.5 text-[10px] font-medium text-white/90 border border-white/20"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
 
-                    {/* Bottom Content Area */}
-                    <div className="space-y-3">
-                        <h3 className="text-2xl font-bold tracking-tight text-white/80 group-hover:text-white transition-colors line-clamp-1">
-                            {project.title}
-                        </h3>
-                        <p className="text-xs text-white/60 group-hover:text-white/80 transition-colors line-clamp-3 leading-relaxed">
-                            {project.description}
-                        </p>
-
-                        {/* Slide-up View Button */}
-                        <div className="pt-2 flex items-center justify-between">
-                            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-medium text-xs transition-all duration-500 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
-                                <span>View project</span>
-                                <ArrowUpRight className="h-3.5 w-3.5" />
-                            </div>
-
-                            <span className="text-[10px] text-white/40 group-hover:text-white/70 font-mono transition-colors">
-                                {project.tags.length} Tags
-                            </span>
+                        {/* Arrow Button */}
+                        <div className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white transition-all duration-300 group-hover:bg-white group-hover:text-black">
+                            <ArrowUpRight className="h-4 w-4 transition-transform duration-300" />
                         </div>
                     </div>
 
-                </div>
-            </a>
-        </motion.div>
+                    {/* Content Section */}
+                    <div className="flex flex-col p-2.5">
+                        {/* Meta Header */}
+                        <div className="mb-1.5 flex items-center gap-2">
+                            {primaryTag && (
+                                <span className="rounded-full bg-neutral-100 dark:bg-white/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-neutral-700 dark:text-white/80 border border-neutral-200 dark:border-white/10">
+                                    {primaryTag}
+                                </span>
+                            )}
+                            <span className="font-mono text-[10px] text-neutral-400 dark:text-white/40">
+                                {indexFormatted}
+                            </span>
+                        </div>
+
+                        {/* Description Section */}
+                        {isDescriptionLong ? (
+                            <Tooltip delayDuration={200}>
+                                <TooltipTrigger asChild>
+                                    <p className="text-xs leading-snug text-neutral-600 dark:text-white/60 line-clamp-2 hover:text-neutral-900 dark:hover:text-white/90 transition-colors cursor-pointer">
+                                        {project.description}
+                                    </p>
+                                </TooltipTrigger>
+                                <TooltipContent
+                                    side="bottom"
+                                    className="max-w-xs bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 border border-neutral-200 dark:border-white/10 shadow-lg text-xs p-2.5 rounded-xl"
+                                >
+                                    <p className="leading-relaxed">{project.description}</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        ) : (
+                            <p className="text-xs leading-snug text-neutral-600 dark:text-white/60 line-clamp-2">
+                                {project.description}
+                            </p>
+                        )}
+                    </div>
+                </a>
+            </motion.div>
+        </TooltipProvider>
     );
 }
