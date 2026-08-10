@@ -63,8 +63,8 @@ export default function ProjectsPage() {
                             <button
                                 onClick={() => setViewMode("list")}
                                 className={`inline-flex items-center gap-2 rounded-md px-3.5 py-2 text-xs font-semibold transition-all ${viewMode === "list"
-                                        ? "bg-primary text-primary-foreground shadow-sm"
-                                        : "text-muted-foreground hover:text-foreground"
+                                    ? "bg-primary text-primary-foreground shadow-sm"
+                                    : "text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 <List className="h-4 w-4" />
@@ -73,8 +73,8 @@ export default function ProjectsPage() {
                             <button
                                 onClick={() => setViewMode("grid")}
                                 className={`inline-flex items-center gap-2 rounded-md px-3.5 py-2 text-xs font-semibold transition-all ${viewMode === "grid"
-                                        ? "bg-primary text-primary-foreground shadow-sm"
-                                        : "text-muted-foreground hover:text-foreground"
+                                    ? "bg-primary text-primary-foreground shadow-sm"
+                                    : "text-muted-foreground hover:text-foreground"
                                     }`}
                             >
                                 <LayoutGrid className="h-4 w-4" />
