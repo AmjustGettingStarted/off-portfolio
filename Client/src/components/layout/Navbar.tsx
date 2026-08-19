@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { navVariants } from "@/utils/animation";
 import { cn } from "@/lib/utils";
-import { Menu, X, Sun, Moon, Download } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 
-
-const navLinks = [
-  { title: "Home", href: "/" },
-  { title: "Projects", href: "/#projects" },
-  { title: "About", href: "/#about" },
-  { title: "Career", href: "/#experience" },
-  { title: "Contact", href: "/#contact" },
+const rawNavLinks = [
+  { title: "Home", section: "#home" },
+  { title: "Projects", section: "#projects" },
+  { title: "About", section: "#about" },
+  { title: "Career", section: "#experience" },
+  { title: "Contact", section: "#contact" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { setTheme, theme } = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +31,17 @@ const Navbar = () => {
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  // Helper to dynamically calculate target href based on current location
+  const getHref = (section: string) => {
+    const isHomePage = location.pathname === "/";
+
+    if (section === "#home") {
+      return isHomePage ? "#home" : "/";
+    }
+
+    return isHomePage ? section : `/${section}`;
   };
 
   return (
@@ -46,7 +58,7 @@ const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <motion.a
-          href="/"
+          href={getHref("#home")}
           className="text-xl font-bold"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -57,10 +69,10 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center">
           <ul className="flex items-center space-x-8 mr-4">
-            {navLinks.map((link, index) => (
+            {rawNavLinks.map((link, index) => (
               <motion.li key={index} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
                 <a
-                  href={link.href}
+                  href={getHref(link.section)}
                   className="relative text-sm font-medium text-foreground transition-colors hover:text-primary"
                 >
                   {link.title}
@@ -68,18 +80,6 @@ const Navbar = () => {
                 </a>
               </motion.li>
             ))}
-            {/* Download Resume */}
-            {/* <motion.li whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-              <a
-                href="/resume.pdf"
-                download="resume.pdf"
-                className="flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
-                title="Download Resume"
-              >
-                <Download className="mr-1 w-4 h-4" />
-                Resume
-              </a>
-            </motion.li> */}
           </ul>
 
           {/* Theme toggle button */}
@@ -121,6 +121,7 @@ const Navbar = () => {
       <AnimateMobileMenu
         isOpen={isMenuOpen}
         onClose={() => setIsMenuOpen(false)}
+        getHref={getHref}
       />
     </motion.header>
   );
@@ -129,9 +130,11 @@ const Navbar = () => {
 const AnimateMobileMenu = ({
   isOpen,
   onClose,
+  getHref,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  getHref: (section: string) => string;
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -166,9 +169,7 @@ const AnimateMobileMenu = ({
         opacity: isOpen ? 1 : 0,
       }}
       transition={{ duration: 0.3, ease: [0.25, 0.25, 0.25, 0.75] }}
-      className={`fixed inset-x-0 top-[64px] z-[50] overflow-hidden backdrop-blur-md md:hidden transition-colors duration-300 ${resolvedTheme === "dark"
-        ? "bg-background/95"
-        : "bg-[#F7F6F2]/95" // Matches the light mode Hero background perfectly
+      className={`fixed inset-x-0 top-[64px] z-[50] overflow-hidden backdrop-blur-md md:hidden transition-colors duration-300 ${resolvedTheme === "dark" ? "bg-background/95" : "bg-[#F7F6F2]/95"
         }`}
     >
       {isOpen && (
@@ -186,7 +187,7 @@ const AnimateMobileMenu = ({
             }}
             className="flex flex-col items-center space-y-8"
           >
-            {navLinks.map((link, index) => (
+            {rawNavLinks.map((link, index) => (
               <motion.li
                 key={index}
                 variants={{
@@ -197,7 +198,7 @@ const AnimateMobileMenu = ({
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-                  href={link.href}
+                  href={getHref(link.section)}
                   className="text-2xl font-medium"
                   onClick={onClose}
                 >
@@ -205,25 +206,6 @@ const AnimateMobileMenu = ({
                 </a>
               </motion.li>
             ))}
-            {/* <motion.li
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0 },
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <a
-                href="/resume.pdf"
-                download="resume.pdf"
-                className="flex items-center gap-1 text-2xl font-medium"
-                title="Download Resume"
-              >
-                <Download className="mr-1" />
-
-                Download Resume
-              </a>
-            </motion.li> */}
           </motion.ul>
         </motion.nav>
       )}
