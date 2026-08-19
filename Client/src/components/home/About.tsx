@@ -1,71 +1,70 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { SectionHeading } from "@/components/ui/AnimatedText";
-import {
-  Code,
-  Layout,
-  Zap,
-  Database,
-  Server,
-  Computer,
-  ChartBarStacked,
-} from "lucide-react";
+import { Layout, Zap, Server, Code, Layers, Database } from "lucide-react";
+
 
 const skills = [
-  { name: "NextJS", level: 50, color: "bg-[#0070F3]" }, // Official Next.js blue
-  { name: "TypeScript", level: 50, color: "bg-[#3178C6]" }, // TypeScript blue
-  { name: "TailwindCSS", level: 75, color: "bg-[#06B6D4]" }, // Tailwind cyan
-  { name: "React", level: 60, color: "bg-[#61DAFB]" }, // React light blue
-  { name: "Java", level: 75, color: "bg-[#F89820]" }, // Java orange
-  { name: "MySQL", level: 75, color: "bg-[#DD8A00]" }, // MySQL warm yellow-orange
-  { name: "Spring", level: 50, color: "bg-[#6DB33F]" }, // Spring green
-  { name: "HTML & CSS", level: 70, color: "bg-[#E44D26]" }, // HTML orange-red
-  { name: "JavaScript", level: 70, color: "bg-[#F7DF1E]" }, // JavaScript yellow
-  { name: "Mongo DB", level: 50, color: "bg-[#4DB33D]" }, // MongoDB green
-  { name: "Git/GitHub", level: 75, color: "bg-[#F05032]" }, // Git red-orange
-  { name: "ShadcnUI", level: 85, color: "bg-[#6B7280]" }, // Neutral gray
-  // { name: "Express.js", level: 80, color: "bg-[#353535]" },
-  // { name: "Node.js", level: 77, color: "bg-[#68a063]" },
-  // { name: "Prisma ORM", level: 80, color: "bg-[#1B9AAA]" },
-  // { name: "Mongoose ORM", level: 79, color: "bg-[#4A2F27]" },
+  // Core Frontend & Languages
+  { name: "NextJS", level: 85, color: "bg-zinc-900 dark:bg-zinc-100" },      // Inverted monochrome
+  { name: "TypeScript", level: 80, color: "bg-[#3178C6]" },                  // TypeScript blue
+  { name: "React", level: 85, color: "bg-[#008B8B] dark:bg-[#61DAFB]" },     // Teal (Light) / Cyan (Dark)
+  { name: "JavaScript", level: 80, color: "bg-[#D4AC0D] dark:bg-[#F7DF1E]" }, // Gold (Light) / Yellow (Dark)
+  { name: "TailwindCSS", level: 90, color: "bg-[#06B6D4]" },                 // Tailwind cyan
+  { name: "HTML & CSS", level: 85, color: "bg-[#E44D26]" },                  // HTML orange-red
+  { name: "ShadcnUI", level: 85, color: "bg-slate-600 dark:bg-slate-300" },  // Neutral Slate
+
+  // Backend, Databases & Auth
+  { name: "Node.js", level: 75, color: "bg-[#5FA04E]" },                     // Node green
+  { name: "Express.js", level: 75, color: "bg-stone-600 dark:bg-stone-300" },// Warm Stone/Grey
+  { name: "PostgreSQL", level: 75, color: "bg-[#336791] dark:bg-[#4169E1]" },// Postgres Navy / Royal Blue
+  { name: "Prisma ORM", level: 75, color: "bg-[#0C344B] dark:bg-[#2D3748]" },// Prisma Teal / Indigo-Grey
+  { name: "Supabase", level: 80, color: "bg-[#3ECF8E]" },                    // Supabase emerald green
+  { name: "Convex", level: 75, color: "bg-[#EE342F]" },                      // Convex red
+
+  // Tools & Workflows
+  { name: "Git/GitHub", level: 80, color: "bg-[#F05032]" },                  // Git red-orange
+  { name: "Java", level: 60, color: "bg-[#F89820]" },                        // Java orange
 ];
+
+
 
 const services = [
   {
     icon: <Layout className="h-8 w-8" />,
     title: "Frontend Engineering",
     description:
-      "Crafting high-performance, scalable user interfaces with Next.js, React, and Tailwind CSS.",
+      "Crafting responsive, high-performance web applications using Next.js (App Router), React 19, TypeScript, and Tailwind CSS v4.",
   },
   {
     icon: <Zap className="h-8 w-8" />,
-    title: "Web Performance Optimization",
+    title: "Web Performance & Accessibility",
     description:
-      "Enhancing UX by improving load speeds, accessibility, and responsiveness.",
+      "Optimizing web applications for max performance, client-side caching, fluid layout responsiveness, and a11y compliance.",
   },
   {
     icon: <Server className="h-8 w-8" />,
-    title: "Exploring Java Full Stack",
+    title: "Full-Stack Architecture",
     description:
-      "Diving into Spring Boot, MySQL, and backend technologies to expand my skillset.",
+      "Engineering robust end-to-end architectures leveraging Node.js, Express, Prisma ORM, and PostgreSQL databases.",
   },
   {
     icon: <Code className="h-8 w-8" />,
-    title: "Component-Driven Development",
+    title: "Component Design Systems",
     description:
-      "Building reusable and maintainable UI components with modern frameworks.",
+      "Architecting modular, accessible, and scalable UI component workflows with Shadcn/UI, Radix UI, and Framer Motion.",
   },
   {
-    icon: <Computer className="h-8 w-8" />,
-    title: "UI/UX Enhancements",
+    icon: <Layers className="h-8 w-8" />,
+    title: "Real-Time & AI Integration",
     description:
-      "Refining designs and improving user interactions in front-end projects using Radix UI, Shadcn UI, and Framer Motion.",
+      "Integrating real-time document persistence (Convex), LLMs (Gemini API), and webhooks for modern web applications.",
   },
   {
-    icon: <ChartBarStacked className="h-8 w-8" />,
-    title: "Full-Stack Project Development",
+    icon: <Database className="h-8 w-8" />,
+    title: "Auth & Multi-Tenant Systems",
     description:
-      "Working on real-world projects like a Stack Overflow clone, applying full-stack principles using MongoDB, Express.js, React, and Node.js.",
+      "Implementing RBAC permissions, multi-tier scheduling, credit workflows, and secure auth using Supabase RLS and Clerk.",
   },
 ];
 
