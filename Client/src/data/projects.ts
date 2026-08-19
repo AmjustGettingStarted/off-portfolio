@@ -3,7 +3,7 @@ export const projects = [
     title: "Inkspire | AI Content Platform",
     description:
       "Inkspire is an AI-powered content creation and sharing platform built with Next.js, designed for writers and creators to capture, organize, and share ideas seamlessly. Features include real-time collaboration, Gemini AI assistance, analytics, and a responsive modern UI.",
-    imgUrl: "/inkspire.png",
+    imgUrl: "/inkspire.gif",
     link: "https://inkspire-five.vercel.app",
     tags: [
       "NextJS",
