@@ -27,8 +27,8 @@ const Hero = () => {
       {/* Responsive Left & Top Overlay Gradient (Fixes background bleed on mobile & desktop) */}
       <div
         className={`absolute inset-0 z-[1] transition-all duration-500 ${resolvedTheme === "dark"
-            ? "bg-gradient-to-b from-black/80 via-black/60 to-background md:bg-gradient-to-r md:from-black md:via-black/75 md:to-transparent"
-            : "bg-gradient-to-b from-[#F7F6F2]/95 via-[#F7F6F2]/80 to-[#F7F6F2] md:bg-gradient-to-r md:from-[#F7F6F2] md:via-[#F4F4F0]/85 md:to-transparent"
+          ? "bg-gradient-to-b from-black/80 via-black/60 to-background md:bg-gradient-to-r md:from-black md:via-black/75 md:to-transparent"
+          : "bg-gradient-to-b from-[#F7F6F2]/95 via-[#F7F6F2]/80 to-[#F7F6F2] md:bg-gradient-to-r md:from-[#F7F6F2] md:via-[#F4F4F0]/85 md:to-transparent"
           }`}
       />
 
@@ -88,12 +88,12 @@ const Hero = () => {
           className="mt-8 md:mt-12 flex flex-wrap items-center gap-4 sm:gap-5"
         >
           <motion.a
-            href="#projects"
+            href="projects"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className={`inline-flex items-center gap-2 rounded-full px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold transition-all ${resolvedTheme === "dark"
-                ? "bg-white text-black"
-                : "bg-[#1A1A1A] text-[#F7F6F2] hover:bg-[#2F2F2F]"
+              ? "bg-white text-black"
+              : "bg-[#1A1A1A] text-[#F7F6F2] hover:bg-[#2F2F2F]"
               }`}
           >
             View My Work
@@ -105,8 +105,8 @@ const Hero = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className={`inline-flex items-center gap-2 rounded-full border px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold backdrop-blur-md transition-all ${resolvedTheme === "dark"
-                ? "border-white/15 bg-white/5 text-white hover:border-white/40 hover:bg-white/10"
-                : "border-black/15 bg-black/5 text-[#1A1A1A] hover:border-black/30 hover:bg-black/10"
+              ? "border-white/15 bg-white/5 text-white hover:border-white/40 hover:bg-white/10"
+              : "border-black/15 bg-black/5 text-[#1A1A1A] hover:border-black/30 hover:bg-black/10"
               }`}
           >
             Get In Touch
@@ -134,8 +134,8 @@ const Hero = () => {
       {/* Bottom Fade: Smooth transition into the Projects section */}
       <div
         className={`absolute bottom-0 left-0 right-0 z-[5] h-32 pointer-events-none transition-colors duration-500 ${resolvedTheme === "dark"
-            ? "bg-gradient-to-t from-background to-transparent"
-            : "bg-gradient-to-t from-white via-white/80 to-transparent"
+          ? "bg-gradient-to-t from-background to-transparent"
+          : "bg-gradient-to-t from-white via-white/80 to-transparent"
           }`}
       />
     </section>
