@@ -84,7 +84,7 @@
   }
 
   html {
-    @apply scroll-smooth;
+    /* scroll-behavior: smooth is handled by Lenis */
   }
 
   body {
