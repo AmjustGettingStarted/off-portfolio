@@ -104,6 +104,21 @@ export const projects = [
     ],
   },
   {
+    title: "Fizzo Zero | Botanical Soda Landing",
+    description:
+      "An interactive 3D landing page for a botanical diet soda brand featuring high-performance 3D product rendering, smooth GSAP animations, dynamic flavor profiles, and a sleek, modern UI.",
+    imgUrl: "/fizzo.png", 
+    link: "https://soda-3d-site.vercel.app",
+    tags: [
+      "NextJS",
+      "GSAP",
+      "3D / Model Viewer",
+      "Tailwind CSS",
+      "TypeScript",
+      "Lucide React",
+    ],
+  },
+  {
     title: "Nike | Lab Concept",
     description: "An interactive landing hero showcasing advanced GSAP and Framer Motion animations with dynamic cursor reveals and high-performance product presentation.",
     imgUrl: "/nike.png",
