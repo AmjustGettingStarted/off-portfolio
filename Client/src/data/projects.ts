@@ -74,6 +74,20 @@ export const projects = [
       "JavaScript",
     ],
   },
+ {
+    title: "KAGE | Hidden Realms of Kyoto",
+    description:
+      "An immersive 3D scroll-driven web experience exploring Kyoto's hidden temples. Built with Next.js 16, React 19, Three.js, and custom shaders featuring continuous multi-chapter navigation and ambient visual effects.",
+    imgUrl: "/kage.png",
+    link: "https://kage-self.vercel.app",
+    tags: [
+      "Next.js 16",
+      "Three.js",
+      "Shaders",
+      "React 19",
+      "Tailwind CSS",
+    ],
+  },
   {
     title: "GymPro | Fitness & Workout Tracker",
     description:
