@@ -30,6 +30,7 @@ export const projects = [
       "Clerk",
     ],
   },
+
   {
     title: "ConsultX | Doctor Appointment Platform",
     description:
@@ -43,6 +44,34 @@ export const projects = [
       "PostgreSQL",
       "Neon",
       "Vonage",
+    ],
+  },
+ {
+    title: "Mango UI | Component Library Concept",
+    description:
+      "A dark-mode hero exploration and landing page concept designed for an open-source UI component library. Built with Next.js 16, React 19, and Framer Motion to demonstrate modern typography, layout transitions, and visual asset displays.",
+    imgUrl: "/mangoui.png",
+    link: "https://mango-ui-lemon.vercel.app",
+    tags: [
+      "Next.js 16",
+      "React 19",
+      "Tailwind CSS",
+      "Framer Motion",
+      "UI Concept",
+    ],
+  },
+  {
+    title: "Anime News CLI",
+    description: "A lightweight Node.js command-line tool published on NPM that fetches real-time anime news feeds via Google News RSS with interactive terminal prompts.",
+    imgUrl: "/anime-cli.jpg",
+    link: "https://github.com/AmjustGettingStarted/Anime-News-CLI",
+    tags: [
+      "Node.js",
+      "CLI",
+      "NPM Package",
+      "Open Source",
+      "RSS Parser",
+      "JavaScript",
     ],
   },
   {
@@ -59,20 +88,6 @@ export const projects = [
       "Supabase",
       "PostgreSQL",
       "Recharts",
-    ],
-  },
-  {
-    title: "Anime News CLI",
-    description: "A lightweight Node.js command-line tool published on NPM that fetches real-time anime news feeds via Google News RSS with interactive terminal prompts.",
-    imgUrl: "/anime-cli.jpg",
-    link: "https://github.com/AmjustGettingStarted/Anime-News-CLI",
-    tags: [
-      "Node.js",
-      "CLI",
-      "NPM Package",
-      "Open Source",
-      "RSS Parser",
-      "JavaScript",
     ],
   },
   {
