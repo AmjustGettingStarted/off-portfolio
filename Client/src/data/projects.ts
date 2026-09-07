@@ -86,6 +86,7 @@ export const projects = [
       "Shaders",
       "React 19",
       "Tailwind CSS",
+      "WebGL"
     ],
   },
   {
