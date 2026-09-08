@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/animation";
 import { ArrowUpRight } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { resolvedTheme } = useTheme();
@@ -87,18 +88,21 @@ const Hero = () => {
           variants={fadeIn("up", 0.35)}
           className="mt-8 md:mt-12 flex flex-wrap items-center gap-4 sm:gap-5"
         >
-          <motion.a
-            href="projects"
+          <motion.div
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className={`inline-flex items-center gap-2 rounded-full px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold transition-all ${resolvedTheme === "dark"
-              ? "bg-white text-black"
-              : "bg-[#1A1A1A] text-[#F7F6F2] hover:bg-[#2F2F2F]"
-              }`}
           >
-            View My Work
-            <ArrowUpRight size={18} />
-          </motion.a>
+            <Link
+              to="/projects"
+              className={`inline-flex items-center gap-2 rounded-full px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm font-semibold transition-all ${resolvedTheme === "dark"
+                ? "bg-white text-black"
+                : "bg-[#1A1A1A] text-[#F7F6F2] hover:bg-[#2F2F2F]"
+                }`}
+            >
+              View My Work
+              <ArrowUpRight size={18} />
+            </Link>
+          </motion.div>
 
           <motion.a
             href="#contact"
