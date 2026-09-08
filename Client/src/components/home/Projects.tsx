@@ -17,12 +17,19 @@ const Projects = () => {
       if (scrollContainerRef.current) {
         const totalWidth = scrollContainerRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
-        setTranslateX(totalWidth - viewportWidth);
+
+        // Base distance to bring last card into view
+        const maxScroll = totalWidth - viewportWidth;
+
+        // Extra push to bring the last card toward the center / 3/4 across
+        // Adjust 0.35 (35% of viewport) if you want it more or less centered
+        const extraOffset = viewportWidth * 0.35;
+
+        setTranslateX(maxScroll + extraOffset);
       }
     };
 
     updateWidth();
-
     window.addEventListener("resize", updateWidth);
 
     const resizeObserver = new ResizeObserver(() => updateWidth());
@@ -40,7 +47,7 @@ const Projects = () => {
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, -translateX]);
+  const x = useTransform(scrollYProgress, [0, 0.9], [0, -translateX]);
 
   return (
     <section ref={targetRef} className="relative h-[450vh] bg-background" id="projects">
