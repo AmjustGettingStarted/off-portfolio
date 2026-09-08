@@ -46,7 +46,7 @@ export const projects = [
       "Vonage",
     ],
   },
- {
+  {
     title: "Mango UI | Component Library Concept",
     description:
       "A dark-mode hero exploration and landing page concept designed for an open-source UI component library. Built with Next.js 16, React 19, and Framer Motion to demonstrate modern typography, layout transitions, and visual asset displays.",
@@ -74,7 +74,7 @@ export const projects = [
       "JavaScript",
     ],
   },
- {
+  {
     title: "KAGE | Hidden Realms of Kyoto",
     description:
       "An immersive 3D scroll-driven web experience exploring Kyoto's hidden temples. Built with Next.js 16, React 19, Three.js, and custom shaders featuring continuous multi-chapter navigation and ambient visual effects.",
@@ -89,11 +89,26 @@ export const projects = [
       "WebGL"
     ],
   },
-   {
+  {
+    title: "Singapore Sketchbook | Urban Visual Journey",
+    description:
+      "An interactive web showcase exploring the urban landscapes of Singapore—from historic shophouses and hawker tents to the iconic skyline—rendered slowly in ink and color. Features dynamic layout transitions, modern typography, and fast server-side integration.",
+    imgUrl: "/singapore.png",
+    link: "https://singapore-sketchbook.vercel.app",
+    tags: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Motion",
+      "Express.js",
+      "Google GenAI",
+    ],
+  },
+  {
     title: "Fizzo Zero | Botanical Soda Landing",
     description:
       "An interactive 3D landing page for a botanical diet soda brand featuring high-performance 3D product rendering, smooth GSAP animations, dynamic flavor profiles, and a sleek, modern UI.",
-    imgUrl: "/fizzo.png", 
+    imgUrl: "/fizzo.png",
     link: "https://soda-3d-site.vercel.app",
     tags: [
       "NextJS",
