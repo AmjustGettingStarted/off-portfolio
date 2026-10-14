@@ -1,0 +1,11 @@
+{
+  "name": "off-portfolio",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "resend": "^4.1.2"
+  }
+}

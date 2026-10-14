@@ -25,127 +25,79 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Bug Check
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-  console.log("Backend URL:", BACKEND_URL); // Debugging
+  // Vercel serverless endpoint (same-origin in production).
+  // In local dev, vite.config.ts proxies this to the Express backend.
+  const API_URL = "/api/sendEmail";
 
-  const Submit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    const { name, email, message, subject } = formData;
-
-    if (name === "") {
-      toast({
-        title: "Name is empty",
-        description: "Please fill out the name",
-      });
-    }
-    if (email === "") {
-      toast({
-        title: "email is empty",
-        description: "Please fill out the email",
-      });
-    }
-    if (subject === "") {
-      toast({
-        title: "subject is empty",
-        description: "Please fill out the subject",
-      });
-    }
-    if (message === "") {
-      toast({
-        title: "message is empty",
-        description: "Please fill out the message",
-      });
-    }
-
-    console.log(`${name}, ${email}, ${subject}, ${message}`);
-
-    const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/api/v1/sendEmail`,
-      { name, email, subject, message },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
-  // For sending mail
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    const { name, email, subject, message } = formData;
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const subject = formData.subject.trim();
+    const message = formData.message.trim();
 
     if (!name || !email || !subject || !message) {
       toast({
-        title: "Missing Fields",
+        title: "Missing fields",
         description: "Please fill out all fields before submitting.",
+        variant: "destructive",
       });
-      setIsSubmitting(false);
       return;
     }
 
-    // try {
-    //   const response = await fetch(`${BACKEND_URL}/api/v1/sendEmail`, {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify({ name, email, subject, message }),
-    //   });
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-    //   if (response.ok) {
-    //     toast({
-    //       title: "Success!",
-    //       description: "Your message has been sent.",
-    //     });
-    //   } else {
-    //     toast({
-    //       title: "Error",
-    //       description: "Failed to send message. Please try again.",
-    //     });
-    //   }
-    // } catch (error) {
-    //   toast({
-    //     title: "Error",
-    //     description: "Something went wrong.",
-    //   });
-    // } finally {
-    //   setIsSubmitting(false);
-    // }
+    setIsSubmitting(true);
 
-    // Alternarte way for resend issue
-    toast({
-      title: "Message Sent!",
-      description: "Your message has been sent successfully",
-    });
+    try {
+      const response = await axios.post(
+        API_URL,
+        { name, email, subject, message },
+        {
+          headers: { "Content-Type": "application/json" },
+          timeout: 15000,
+        }
+      );
 
-    //  Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+      if (response.status === 200 && response.data?.success !== false) {
+        toast({
+          title: "Message sent!",
+          description:
+            "Thank you for your message. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error(response.data?.error || "Failed to send message");
+      }
+    } catch (error: unknown) {
+      console.error("Send email failed:", error);
+      const messageText =
+        axios.isAxiosError(error)
+          ? error.response?.data?.error ||
+            error.message ||
+            "Failed to send message. Please try again."
+          : error instanceof Error
+            ? error.message
+            : "Something went wrong. Please try again.";
 
-    setIsSubmitting(false);
+      // Common Resend pitfall: free onboarding@resend.dev domain only
+      // delivers to the Resend account owner's inbox.
+      toast({
+        title: "Failed to send message",
+        description: messageText,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -196,7 +148,7 @@ const Contact = () => {
           </motion.div>
 
           <motion.div variants={fadeIn("left", 0.2)}>
-            <form onSubmit={Submit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -268,7 +220,6 @@ const Contact = () => {
                 className="flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-70"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={handleSendMessage}
               >
                 {isSubmitting ? (
                   "Sending..."
