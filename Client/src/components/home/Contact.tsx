@@ -15,7 +15,9 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
+    website_url: "",
   });
+  const [formLoadedAt, setFormLoadedAt] = useState<number>(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
@@ -36,6 +38,7 @@ const Contact = () => {
     const email = formData.email.trim();
     const subject = formData.subject.trim();
     const message = formData.message.trim();
+    const website_url = formData.website_url;
 
     if (!name || !email || !subject || !message) {
       toast({
@@ -60,7 +63,14 @@ const Contact = () => {
     try {
       const response = await axios.post(
         API_URL,
-        { name, email, subject, message },
+        {
+          name,
+          email,
+          subject,
+          message,
+          website_url,
+          formLoadedAt,
+        },
         {
           headers: { "Content-Type": "application/json" },
           timeout: 15000,
@@ -73,7 +83,14 @@ const Contact = () => {
           description:
             "Thank you for your message. I'll get back to you soon.",
         });
-        setFormData({ name: "", email: "", subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          website_url: "",
+        });
+        setFormLoadedAt(Date.now());
       } else {
         throw new Error(response.data?.error || "Failed to send message");
       }
@@ -149,6 +166,30 @@ const Contact = () => {
 
           <motion.div variants={fadeIn("left", 0.2)}>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Invisible Honeypot Field */}
+              <div
+                style={{
+                  position: "absolute",
+                  left: "-9999px",
+                  opacity: 0,
+                  height: 0,
+                  width: 0,
+                  pointerEvents: "none",
+                }}
+                aria-hidden="true"
+              >
+                <label htmlFor="website_url">Leave this field blank</label>
+                <input
+                  type="text"
+                  id="website_url"
+                  name="website_url"
+                  value={formData.website_url || ""}
+                  onChange={handleChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">

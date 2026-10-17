@@ -47,7 +47,27 @@ app.get('/', (req, res) => {
 
 app.post('/api/v1/sendEmail', async (req, res) => {
     try {
-        const { name, email, subject, message } = req.body
+        const { name, email, subject, message, website_url, formLoadedAt } = req.body;
+
+        // Anti-bot Defense: Invisible Honeypot + Minimum Time-to-Submit Check
+        // 1. Honeypot Check: If website_url is present and not empty, it is an automated bot.
+        const isHoneypotFilled = Boolean(typeof website_url === "string" ? website_url.trim() : website_url);
+
+        // 2. Submission Speed Check: If !formLoadedAt or elapsedSeconds < 2.5, it submitted faster than humanly possible.
+        const elapsedSeconds = formLoadedAt ? (Date.now() - Number(formLoadedAt)) / 1000 : 0;
+        const isTooFast = !formLoadedAt || Number.isNaN(elapsedSeconds) || elapsedSeconds < 2.5;
+
+        if (isHoneypotFilled || isTooFast) {
+            console.warn(
+                `[Anti-Bot Intercepted] honeypot=${isHoneypotFilled}, elapsed=${Number(elapsedSeconds).toFixed(2)}s. Silently dropping submission.`
+            );
+            // Return fake HTTP 200 so automated crawlers do not retry or detect the block
+            return res.status(200).json({
+                success: true,
+                message: "Message sent successfully",
+            });
+        }
+
         if (!name?.trim() || !email?.trim() || !subject?.trim() || !message?.trim()) {
             return res.status(400).json({ error: "Please fill all the fields" });
         }
